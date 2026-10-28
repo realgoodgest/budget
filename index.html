@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>budgeting</title><meta name="title" content="budgeting"><meta charset="UTF-8">
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>budgeting full</title><meta name="title" content="budgeting full"><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.js" async=""></script><script type="importmap">{
   "imports": {}
 }</script></head><body>
@@ -7,7 +7,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grand Line Budget • Budget Tracker One Piece</title>
+<title>Grand Line Budget • AKG 100% Wajib</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   :root{
@@ -30,14 +30,13 @@
     border:1.5px solid rgba(245,197,66,.5);animation:rise linear infinite;pointer-events:none;z-index:0}
   @keyframes rise{to{transform:translateY(-110vh);opacity:0}}
 
-  .wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+  .wrap{max-width:1020px;margin:0 auto;display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
   .muted{color:var(--muted);font-size:12px;font-family:system-ui,sans-serif}
   h3{font-size:14px;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;
      display:flex;align-items:center;gap:8px}
-  .hstack{display:flex;gap:8px;flex-wrap:wrap}
+  .hstack{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   svg.ic{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-  /* HEADER */
   header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
     background:linear-gradient(135deg,var(--red) 0%,var(--red2) 100%);border-radius:18px;padding:18px 20px;
     border:3px solid var(--gold);box-shadow:0 8px 0 #6b0f1c,0 14px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
@@ -58,11 +57,10 @@
   .btn-main{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:2px solid #fff3c4;
     box-shadow:0 4px 0 #8a5b08;padding:12px 18px;font-size:14px}
 
-  /* ALERT */
   .alert{padding:16px 18px;border-radius:16px;border:3px solid;display:flex;gap:14px;align-items:flex-start;
     font-family:system-ui,sans-serif;font-size:14px;line-height:1.6;background:var(--parch);color:var(--ink);
     box-shadow:0 6px 0 rgba(0,0,0,.25);transition:background .4s,border-color .4s}
-  .alert .ico svg{width:34px;height:34px;stroke:var(--ink);stroke-width:1.8}
+  .alert .ico svg{width:34px;height:34px;stroke:var(--ink);stroke-width:1.8;fill:none}
   .alert.safe{border-color:var(--safe)}
   .alert.warn{border-color:var(--warn)}
   .alert.danger{border-color:var(--danger);animation:shake .5s,pulseD 1.8s infinite .5s}
@@ -71,7 +69,6 @@
   .alert b{font-family:Georgia,serif;font-size:16px}
   .extra{margin-top:8px;padding-top:8px;border-top:2px dashed rgba(43,29,14,.3);font-size:13px}
 
-  /* KAPAL */
   .sea-panel{background:linear-gradient(180deg,var(--sea2),var(--sea));border:3px solid var(--gold);border-radius:18px;
     padding:18px;position:relative;overflow:hidden;box-shadow:0 6px 0 #04101e}
   .track{position:relative;height:70px;margin-top:6px}
@@ -83,7 +80,6 @@
   .track-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:system-ui,sans-serif;margin-top:4px}
   .flag{position:absolute;right:-6px;top:-16px;width:26px;height:26px}
 
-  /* CARDS */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
   .card{background:var(--parch);color:var(--ink);border:3px solid #8a5b08;border-radius:6px;padding:14px 14px 12px;
     position:relative;box-shadow:0 6px 0 #5a3a08;transition:transform .2s}
@@ -100,7 +96,6 @@
   .card.danger{background:linear-gradient(180deg,#ffe0e4,#ffc4cc)}
   .card.safe strong{color:#1f7a3f} .card.warn strong{color:#a85a00} .card.danger strong{color:#b0102c}
 
-  /* PANEL */
   .panel{background:linear-gradient(180deg,var(--sea2),var(--sea));border:3px solid var(--gold);border-radius:18px;padding:18px;box-shadow:0 6px 0 #04101e}
   .saldo-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .saldo-input{font-size:22px;font-weight:700;background:var(--parch);border:4px solid;border-radius:14px;padding:10px 16px;width:100%;max-width:360px;outline:none;font-family:Georgia,serif;transition:.35s;color:var(--ink)}
@@ -115,10 +110,10 @@
   @keyframes stripe{to{background-position:22px 0}}
   .legend{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--muted);font-family:system-ui,sans-serif}
 
-  /* FORM */
   form.addForm{display:grid;grid-template-columns:2fr 1.2fr 1.2fr auto;gap:10px}
   input,select{width:100%;background:var(--parch);border:3px solid #8a5b08;color:var(--ink);padding:11px 12px;border-radius:12px;font-size:14px;outline:none;font-family:system-ui,sans-serif;transition:.2s}
   input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,197,66,.35);transform:scale(1.01)}
+  input:disabled,select:disabled{opacity:.55;cursor:not-allowed}
   .dark-field{background:var(--sea);color:var(--text);border-color:var(--gold)}
   .dark-field option{background:var(--sea);color:var(--text)}
   .money{text-align:right;font-variant-numeric:tabular-nums}
@@ -131,32 +126,33 @@
   .kat-opt input{position:absolute;opacity:0;pointer-events:none}
   .kat-opt label{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;border-radius:14px;
     background:rgba(255,255,255,.06);border:2px solid rgba(245,197,66,.25);cursor:pointer;font-size:12px;font-family:system-ui,sans-serif;color:var(--muted);transition:.25s}
-  .kat-opt label svg{width:30px;height:30px;stroke:currentColor;transition:transform .3s}
+  .kat-opt label svg{width:30px;height:30px;stroke:currentColor;fill:none;transition:transform .3s}
   .kat-opt label:hover{transform:translateY(-3px);color:var(--text)}
   .kat-opt input:checked + label{background:linear-gradient(180deg,var(--gold),var(--gold2));color:var(--ink);border-color:#fff3c4;box-shadow:0 4px 0 #8a5b08}
   .kat-opt input:checked + label svg{transform:scale(1.15) rotate(-6deg)}
+  .field-label{display:flex;flex-direction:column;gap:4px;font-family:system-ui,sans-serif;font-size:12px;color:var(--text)}
 
-  /* FILTER & LIST */
   .filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
   .filter input,.filter select{width:auto;min-width:150px;padding:8px 12px;font-size:13px}
-  ul{list-style:none;display:flex;flex-direction:column;gap:10px;max-height:380px;overflow:auto;padding-right:4px}
-  li{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--parch);color:var(--ink);
+  ul.log{list-style:none;display:flex;flex-direction:column;gap:10px;max-height:380px;overflow:auto;padding-right:4px}
+  ul.log li{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--parch);color:var(--ink);
     border:2px solid #8a5b08;border-radius:12px;padding:10px 14px;box-shadow:0 3px 0 #5a3a08;animation:slideIn .4s ease both;transition:transform .2s}
-  li:hover{transform:translateX(4px)}
+  ul.log li:hover{transform:translateX(4px)}
   @keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
-  li.empty{justify-content:center;color:#6b4a1c;font-size:13px;border-style:dashed;background:transparent;border-color:var(--gold);box-shadow:none}
+  ul.log li.empty{justify-content:center;color:#6b4a1c;font-size:13px;border-style:dashed;background:transparent;border-color:var(--gold);box-shadow:none}
   .li-info{display:flex;align-items:center;gap:12px;min-width:0}
   .li-info .kicon{width:38px;height:38px;border-radius:10px;background:var(--sea2);display:grid;place-items:center;flex-shrink:0;border:2px solid var(--gold)}
-  .li-info .kicon svg{width:20px;height:20px;stroke:var(--gold)}
+  .li-info .kicon svg{width:20px;height:20px;stroke:var(--gold);fill:none}
   .li-info b{font-size:14px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .li-info small{font-size:11px;color:#6b4a1c;font-family:system-ui,sans-serif}
   .li-right{display:flex;align-items:center;gap:10px}
   .amount{font-weight:700;font-size:14px;color:var(--red2);white-space:nowrap;font-family:Georgia,serif}
   .del{background:transparent;border:2px solid transparent;color:#6b4a1c;padding:4px 6px;border-radius:8px;cursor:pointer;display:grid;place-items:center;transition:.2s}
-  .del svg{width:16px;height:16px}
+  .del svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
   .del:hover{color:#fff;background:var(--red);border-color:var(--red2)}
+  .del:disabled{opacity:.35;cursor:not-allowed}
+  .del:disabled:hover{background:transparent;color:#6b4a1c}
 
-  /* GRAFIK */
   .chart{display:flex;align-items:flex-end;gap:4px;height:140px;padding-top:10px;border-bottom:2px solid var(--gold)}
   .chart div{flex:1;background:linear-gradient(180deg,var(--red),var(--red2));border-radius:6px 6px 0 0;min-height:3px;position:relative;transition:height .6s cubic-bezier(.3,1.4,.5,1);animation:grow .7s ease both}
   .chart div:hover{filter:brightness(1.3)}
@@ -164,15 +160,13 @@
   @keyframes grow{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
   .axis{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:6px;font-family:system-ui,sans-serif}
 
-  /* KATEGORI */
   .cat{margin-bottom:12px}
   .cat .top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;font-family:system-ui,sans-serif;align-items:center}
   .cat .top span:first-child{display:flex;align-items:center;gap:6px}
-  .cat .top svg{width:14px;height:14px;stroke:var(--gold)}
+  .cat .top svg{width:14px;height:14px;stroke:var(--gold);fill:none}
   .cat .bar{height:12px}
   .cat .fill{background:linear-gradient(90deg,var(--gold),#fff3c4)}
 
-  /* ARSIP */
   .arsip-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
   .arsip-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
   .stat{background:rgba(0,0,0,.25);border:2px solid rgba(245,197,66,.35);border-radius:14px;padding:10px 12px}
@@ -199,16 +193,12 @@
   .status-pill.danger{color:#b0102c;border-color:#b0102c;background:rgba(255,59,92,.15)}
   .empty-arsip{text-align:center;padding:24px;border:2px dashed var(--gold);border-radius:14px;color:var(--muted);font-family:system-ui,sans-serif;font-size:13px}
 
-  /* RENCANA FINANSIAL */
   .plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
   .plan{background:var(--parch);color:var(--ink);border:3px solid #8a5b08;border-radius:16px;padding:16px;box-shadow:0 6px 0 #5a3a08;position:relative;display:flex;flex-direction:column;gap:10px}
   .plan h4{font-size:15px;display:flex;align-items:center;gap:8px;color:#6b2a06}
-  .plan h4 svg{width:22px;height:22px;stroke:#8a3a0a}
+  .plan h4 svg{width:22px;height:22px;stroke:#8a3a0a;fill:none}
   .plan .big{font-size:22px;font-weight:700;color:#1f5a3f;font-family:Georgia,serif}
-  .plan .big.bad{color:#b0102c}
-  .plan .big.mid{color:#a85a00}
   .plan .sub{font-family:system-ui,sans-serif;font-size:12px;color:#6b4a1c;line-height:1.5}
-  .plan .mini-bar{margin-top:0}
   .plan-kv{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-family:system-ui,sans-serif;font-size:12px;border-top:2px dashed rgba(43,29,14,.3);padding-top:10px}
   .plan-kv span:nth-child(odd){color:#6b4a1c}
   .plan-kv span:nth-child(even){font-weight:700;text-align:right}
@@ -216,46 +206,82 @@
   .plan-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:4px}
   .plan-inputs label{font-family:system-ui,sans-serif;font-size:11px;color:#6b4a1c;display:flex;flex-direction:column;gap:4px}
   .plan-inputs input{padding:8px 10px;font-size:13px;background:#fff7e0;color:#000;border-color:#8a5b08}
-  .plan-inputs input::placeholder{color:#6b4a1c;opacity:.6}
   .plan-inputs input:focus{border-color:var(--gold);color:#000}
   .plan .money-wrap .rp{color:#6b4a1c}
   .plan .money-wrap input{padding-left:40px}
   .plan-badge{position:absolute;top:-12px;right:14px;background:var(--red);color:#fff3c4;font-family:system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:99px;border:2px solid var(--gold)}
-  .plan-list{list-style:none;display:flex;flex-direction:column;gap:6px;max-height:none;overflow:visible;padding:0;margin:0}
-  .plan-list li{background:transparent;border:none;box-shadow:none;padding:0;animation:none;justify-content:flex-start;font-family:system-ui,sans-serif;font-size:12px;color:#2b1d0e}
-  .plan-list li:hover{transform:none}
+  .plan-list{list-style:none;display:flex;flex-direction:column;gap:6px;padding:0;margin:0;font-family:system-ui,sans-serif;font-size:12px;color:#2b1d0e}
   .plan-list li::before{content:"⚓";margin-right:6px}
   .progress-ring-wrap{display:flex;align-items:center;gap:12px}
   .ring{width:70px;height:70px;flex-shrink:0}
   .ring circle{fill:none;stroke-width:9}
 
-  /* SARAN REALTIME */
   .saran{font-family:system-ui,sans-serif;font-size:12px;line-height:1.55;border-radius:10px;padding:10px 12px;border-left:4px solid;color:#2b1d0e}
   .saran.ok{background:rgba(61,220,132,.2);border-color:#1f7a3f}
   .saran.mid{background:rgba(255,176,32,.22);border-color:#a85a00}
   .saran.bad{background:rgba(255,59,92,.16);border-color:#b0102c}
-  .saran ul{display:block;max-height:none;overflow:visible;padding:0 0 0 16px;margin:4px 0 0;list-style:disc}
-  .saran li{background:none;border:none;box-shadow:none;padding:0;animation:none;display:list-item;font-size:12px;color:#2b1d0e}
-  .saran li:hover{transform:none}
+  .saran ul{display:block;padding:0 0 0 16px;margin:4px 0 0;list-style:disc}
+  .saran li{font-size:12px;color:#2b1d0e;margin-bottom:3px}
   .saran .judul{font-weight:700;margin-bottom:4px;font-size:12.5px}
 
-  /* SYNC */
-  #syncPanel .hstack{align-items:center}
-  #syncStatus{font-family:system-ui,sans-serif;font-size:12px;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,.25);border:2px solid rgba(245,197,66,.35);color:var(--text)}
-  #syncStatus.ok{border-color:var(--safe);color:#c9f7dc}
-  #syncStatus.warn{border-color:var(--warn);color:#ffe0a0}
+  .anggota-list{display:flex;flex-direction:column;gap:10px;margin:10px 0 4px}
+  .anggota-row{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1.6fr 1.4fr auto;gap:8px;align-items:center;
+    background:rgba(0,0,0,.2);border:2px solid rgba(245,197,66,.35);border-radius:12px;padding:10px}
+  .anggota-row input,.anggota-row select{padding:8px 10px;font-size:13px}
+  .anggota-row .age-note{font-family:system-ui,sans-serif;font-size:10px;color:var(--muted);grid-column:1/-1;margin-top:-4px}
+  @media(max-width:860px){.anggota-row{grid-template-columns:1fr 1fr}.anggota-row .del{justify-self:end}}
 
-  /* SETTINGS */
+  .menu-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    background:rgba(0,0,0,.22);border:2px dashed rgba(245,197,66,.4);border-radius:12px;padding:10px 12px;margin-bottom:14px}
+  .menu-toolbar .info{font-family:system-ui,sans-serif;font-size:12px;color:var(--text)}
+  .menu-toolbar .info b{color:var(--gold)}
+  .ck{display:inline-flex;align-items:center;gap:8px;font-family:system-ui,sans-serif;font-size:12px;color:var(--gold);
+    background:rgba(0,0,0,.3);border:2px solid var(--gold);border-radius:12px;padding:7px 12px;cursor:pointer;font-weight:700}
+  .ck input{width:18px;height:18px;accent-color:#3ddc84;cursor:pointer}
+  .spin{display:inline-block;animation:spin .8s ease}
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+  .menu-anggota{background:var(--parch);color:var(--ink);border:3px solid #8a5b08;border-radius:14px;padding:14px;box-shadow:0 5px 0 #5a3a08;display:flex;flex-direction:column;gap:6px}
+  .menu-anggota h4{font-size:14px;color:#6b2a06;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .menu-anggota h4 .ref-wrap{display:flex;align-items:center;gap:8px}
+  .menu-anggota h4 small{font-family:system-ui,sans-serif;font-size:11px;color:#6b4a1c;font-weight:400}
+  .menu-anggota .ref{width:26px;height:26px;border-radius:8px;border:2px solid #8a5b08;background:#fff3c4;
+    display:grid;place-items:center;cursor:pointer;color:#8a3a0a;transition:.25s;padding:0}
+  .menu-anggota .ref:hover{background:var(--gold);transform:rotate(-45deg)}
+  .menu-anggota .ref svg{width:14px;height:14px}
+  .menu-anggota.flash{animation:flashCard .7s ease}
+  @keyframes flashCard{0%{box-shadow:0 5px 0 #5a3a08,0 0 0 0 rgba(245,197,66,.9)}50%{box-shadow:0 5px 0 #5a3a08,0 0 0 12px rgba(245,197,66,0)}100%{box-shadow:0 5px 0 #5a3a08}}
+  .meal-sub{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#8a3a0a;margin-top:6px;border-bottom:1px solid rgba(43,29,14,.2);padding-bottom:2px}
+  .meal-item{display:flex;justify-content:space-between;gap:8px;font-family:system-ui,sans-serif;font-size:12px;border-bottom:1px dashed rgba(43,29,14,.18);padding:3px 0}
+  .meal-item span:last-child{white-space:nowrap;font-weight:700}
+  .meal-total{font-family:system-ui,sans-serif;font-size:12px;display:flex;justify-content:space-between;font-weight:700;margin-top:3px}
+  .badge100{display:inline-flex;align-items:center;gap:5px;background:#1f7a3f;color:#e9f9d9;font-family:system-ui,sans-serif;
+    font-size:10.5px;font-weight:700;letter-spacing:.4px;padding:3px 9px;border-radius:99px;border:2px solid #0f4a25}
+  .badge100.part{background:#a85a00;border-color:#7a4200}
+  .badge100 svg{width:13px;height:13px;stroke:#e9f9d9}
+  .gizi-anggota{margin-bottom:20px;border:2px dashed rgba(245,197,66,.35);border-radius:14px;padding:12px;background:rgba(0,0,0,.15)}
+  .gizi-anggota > h4{font-size:14px;color:var(--gold);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+  .gizi-row{display:grid;grid-template-columns:190px 1fr 92px;gap:10px;align-items:center;font-family:system-ui,sans-serif;font-size:12px;margin-bottom:5px;color:var(--text)}
+  .gizi-row .bar{height:12px}
+  .gizi-row .pct{text-align:right;font-weight:700;white-space:nowrap}
+  .gizi-row .src{font-size:9.5px;color:var(--muted);display:block;font-weight:400}
+  .gizi-group{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:12px 0 6px;border-bottom:1px solid rgba(245,197,66,.3);padding-bottom:3px}
+  .mini-alert{padding:8px 10px;font-family:system-ui,sans-serif;font-size:12px;border-radius:10px;border:2px solid var(--warn);background:rgba(255,176,32,.2);color:var(--ink);margin:4px 0}
+  .note-honest{font-family:system-ui,sans-serif;font-size:12px;line-height:1.6;background:rgba(255,176,32,.14);
+    border:2px solid var(--warn);border-radius:12px;padding:10px 12px;color:var(--text);margin-bottom:14px}
+  .note-honest b{color:var(--gold)}
+  .pelengkap{background:rgba(215,38,61,.12);border:2px dashed var(--red);border-radius:10px;padding:8px 10px;margin-top:4px}
+  .pelengkap .meal-sub{color:#a31a2c}
+
   details summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--gold);list-style:none;display:flex;align-items:center;gap:8px}
   details summary::-webkit-details-marker{display:none}
   details[open] summary{margin-bottom:14px}
   .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
   .grid3 label{font-size:12px;color:var(--gold);display:flex;flex-direction:column;gap:6px;font-family:system-ui,sans-serif}
 
-  /* TOAST */
   #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);display:flex;flex-direction:column;gap:8px;z-index:99;align-items:center;width:max-content;max-width:92vw}
   .toast{padding:12px 18px;border-radius:12px;font-size:13px;font-weight:700;background:var(--parch);color:var(--ink);border:3px solid;animation:up .35s cubic-bezier(.3,1.4,.5,1);font-family:system-ui,sans-serif;display:flex;align-items:center;gap:8px;box-shadow:0 5px 0 rgba(0,0,0,.3)}
-  .toast svg{width:18px;height:18px;flex-shrink:0}
+  .toast svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2}
   @keyframes up{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:none}}
   .toast.safe{border-color:var(--safe)}
   .toast.warn{border-color:var(--warn)}
@@ -268,13 +294,13 @@
     form.addForm{grid-template-columns:1fr 1fr}
     form.addForm input:first-child{grid-column:1/-1}
     form.addForm button{grid-column:1/-1}
+    .gizi-row{grid-template-columns:120px 1fr 70px}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
 
 
-<!-- SVG SPRITE -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <symbol id="i-hat" viewBox="0 0 64 64">
@@ -295,7 +321,6 @@
       <path d="M5 22 V3" stroke="#2b1d0e" stroke-width="2"></path>
       <path d="M5 4 H20 L17 9 L20 14 H5 Z" fill="#1a1a1a" stroke="#2b1d0e" stroke-width="1"></path>
       <circle cx="11" cy="9" r="2.4" fill="#f4e4bc"></circle>
-      <path d="M9.5 11 L12.5 7" stroke="#1a1a1a" stroke-width="1"></path>
     </symbol>
     <symbol id="i-food" viewBox="0 0 24 24">
       <path d="M7 3 V10 M5 3 V8 M9 3 V8 M5 8 H9" fill="none" stroke-width="2"></path>
@@ -426,10 +451,28 @@
       <circle cx="12" cy="12" r="9" fill="none" stroke-width="2"></circle>
       <path d="M15.5 8.5 L13.2 13.2 L8.5 15.5 L10.8 10.8 Z" fill="none" stroke-width="2"></path>
     </symbol>
+    <symbol id="i-dice" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke-width="2"></rect>
+      <circle cx="8.5" cy="8.5" r="1.4" stroke-width="1.6"></circle>
+      <circle cx="15.5" cy="8.5" r="1.4" stroke-width="1.6"></circle>
+      <circle cx="12" cy="12" r="1.4" stroke-width="1.6"></circle>
+      <circle cx="8.5" cy="15.5" r="1.4" stroke-width="1.6"></circle>
+      <circle cx="15.5" cy="15.5" r="1.4" stroke-width="1.6"></circle>
+    </symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24">
+      <path d="M20 12 A8 8 0 1 1 18 6.5 M20 4 V9 H15" fill="none" stroke-width="2"></path>
+    </symbol>
+    <symbol id="i-pill" viewBox="0 0 24 24">
+      <rect x="2.5" y="8" width="19" height="8" rx="4" transform="rotate(-45 12 12)" fill="none" stroke-width="2"></rect>
+      <path d="M8.5 8.5 L15.5 15.5" stroke-width="2"></path>
+    </symbol>
+    <symbol id="i-seed" viewBox="0 0 24 24">
+      <path d="M12 21 C7 17 5 12 8 7 C11 3 16 4 18 8 C20 13 17 18 12 21 Z" fill="none" stroke-width="2"></path>
+      <path d="M12 21 V9" stroke-width="1.8"></path>
+    </symbol>
   </defs>
 </svg>
 
-<!-- LATAR -->
 <div class="waves" aria-hidden="true">
   <svg viewBox="0 0 1600 160" preserveAspectRatio="none"><path fill="#0f3d66" d="M0 80 Q50 40 100 80 T200 80 T300 80 T400 80 T500 80 T600 80 T700 80 T800 80 T900 80 T1000 80 T1100 80 T1200 80 T1300 80 T1400 80 T1500 80 T1600 80 V160 H0 Z"></path></svg>
   <svg viewBox="0 0 1600 160" preserveAspectRatio="none"><path fill="#1a5a8c" d="M0 100 Q40 60 80 100 T160 100 T240 100 T320 100 T400 100 T480 100 T560 100 T640 100 T720 100 T800 100 T880 100 T960 100 T1040 100 T1120 100 T1200 100 T1280 100 T1360 100 T1440 100 T1520 100 T1600 100 V160 H0 Z"></path></svg>
@@ -438,7 +481,6 @@
 
 <div class="wrap">
 
-  <!-- HEADER -->
   <header>
     <div class="brand">
       <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#i-hat"></use></svg>
@@ -454,10 +496,8 @@
     </div>
   </header>
 
-  <!-- ALERT -->
   <div id="alertBox" class="alert safe"></div>
 
-  <!-- KAPAL -->
   <div class="sea-panel">
     <h3><svg class="ic"><use href="#i-anchor"></use></svg>Pelayaran Anggaran</h3>
     <div class="track">
@@ -469,7 +509,6 @@
     <div class="track-labels"><span>Berangkat (0%)</span><span id="shipInfo">-</span><span>Grand Line (100%)</span></div>
   </div>
 
-  <!-- CARDS -->
   <div class="cards">
     <div class="card"><span class="pin"></span><span class="label"><svg class="ic"><use href="#i-wallet"></use></svg>Gaji</span><strong id="cGaji">-</strong></div>
     <div class="card"><span class="pin"></span><span class="label"><svg class="ic"><use href="#i-skull"></use></svg>Wajib</span><strong id="cWajib">-</strong><small id="cWajibPct"></small></div>
@@ -479,7 +518,6 @@
     <div class="card" id="cardHarian"><span class="pin"></span><span class="label"><svg class="ic"><use href="#i-dot"></use></svg>Jatah / Hari</span><strong id="cHarian">-</strong><small id="cSisaHari"></small></div>
   </div>
 
-  <!-- SALDO AKTUAL -->
   <div class="panel">
     <h3><svg class="ic"><use href="#i-wallet"></use></svg>Saldo Aktual · ketik saldo asli</h3>
     <div class="saldo-wrap">
@@ -491,14 +529,12 @@
     </div>
   </div>
 
-  <!-- PROGRESS -->
   <div class="panel">
     <div class="row"><span>Penggunaan Sisa Gaji</span><span id="pctText">0%</span></div>
     <div class="bar"><div class="fill" id="fill"></div></div>
     <div class="legend"><span>0%</span><span>70% hati-hati</span><span>90% bahaya</span><span>100%</span></div>
   </div>
 
-  <!-- FORM -->
   <div class="panel">
     <h3><svg class="ic"><use href="#i-plus"></use></svg>Catat Pengeluaran</h3>
     <div class="kat-grid" id="katPicker"></div>
@@ -516,7 +552,6 @@
     </form>
   </div>
 
-  <!-- GRAFIK & KATEGORI -->
   <div class="panel">
     <div class="row"><span><svg class="ic" style="display:inline;vertical-align:-4px"><use href="#i-chart"></use></svg> Pengeluaran Harian</span><span class="muted" id="chartInfo"></span></div>
     <div class="chart" id="chart"></div>
@@ -528,17 +563,70 @@
     <div id="kategoriBox"></div>
   </div>
 
-  <!-- LOG -->
   <div class="panel">
     <div class="row"><span><svg class="ic" style="display:inline;vertical-align:-4px"><use href="#i-list"></use></svg> Log Pelayaran</span><span class="muted" id="countInfo"></span></div>
     <div class="filter">
       <input id="fCari" class="dark-field" type="text" placeholder="Cari nama...">
       <select id="fKat" class="dark-field"></select>
     </div>
-    <ul id="list"></ul>
+    <ul class="log" id="list"></ul>
   </div>
 
-  <!-- ARSIP LIFETIME -->
+  <div class="panel" id="menuPanel">
+    <h3><svg class="ic"><use href="#i-family"></use></svg>Anggota Keluarga</h3>
+    <p class="muted" style="margin-bottom:10px">
+      Isi tanggal lahir untuk kelompok umur AKG otomatis (wajib untuk bayi dan balita).
+      Kondisi hamil/menyusui berlaku untuk perempuan.
+    </p>
+    <div class="row">
+      <span class="muted" id="anggotaInfo"></span>
+      <button class="btn small" id="btnAddAnggota"><svg class="ic"><use href="#i-plus"></use></svg>Tambah Anggota</button>
+    </div>
+    <div id="anggotaList" class="anggota-list"></div>
+  </div>
+
+  <div class="panel">
+    <h3><svg class="ic"><use href="#i-food"></use></svg>Menu Harian Keluarga • AKG 100% WAJIB</h3>
+    <p class="muted" style="margin-bottom:12px">
+      Setiap anggota keluarga dijamin <b>100% untuk seluruh 36 zat gizi</b> AKG Permenkes No. 28 Tahun 2019
+      (energi, protein, lemak, karbohidrat, serat, air, omega‑3, omega‑6, 14 vitamin, 14 mineral).
+    </p>
+
+    <div class="menu-toolbar">
+      <div class="info" id="menuVariasiInfo"></div>
+      <div class="hstack">
+        <label class="ck"><input type="checkbox" id="chkWajib" checked=""> Wajib 100% AKG</label>
+        <button class="btn small" id="btnAcakMenu"><svg class="ic" id="icAcak"><use href="#i-dice"></use></svg>Acak Menu Keluarga</button>
+        <button class="btn small dark" id="btnResetVariasi"><svg class="ic"><use href="#i-rotate"></use></svg>Variasi Awal</button>
+      </div>
+    </div>
+
+    <div class="note-honest">
+      <b>Cara 100% dijamin (dan apa adanya):</b> menu disusun 3 lapis —
+      <b>(1)</b> pola 3× makan + selingan mendekati AKG dalam budget;
+      <b>(2)</b> tambahan porsi makanan nyata untuk menutup kekurangan (teri, kelor, hati, kacang, sayur, garam, air, teh berfluor);
+      <b>(3)</b> pelengkap/fortifikasi terarah <i>hanya</i> untuk zat gizi yang memang hampir tidak mungkin dipenuhi dari makanan biasa
+      (vitamin D, fluor, kromium, kolin, natrium). Bagian (3) ditandai terpisah dan biayanya ditampilkan,
+      jadi kamu tahu mana yang dari makanan dan mana yang dari pelengkap. Ini bukan klaim bahwa makanan biasa saja sudah cukup —
+      angka 100% dicapai dengan kombinasi tersebut.
+    </div>
+
+    <div class="cards" style="margin-bottom:14px">
+      <div class="card safe"><span class="pin"></span><span class="label">Budget / Hari</span><strong id="mBudget">-</strong><small>keluarga (kartu atas)</small></div>
+      <div class="card"><span class="pin"></span><span class="label">Jumlah Anggota</span><strong id="mJumlah">-</strong><small id="mJumlahNote"></small></div>
+      <div class="card" id="cardBiaya"><span class="pin"></span><span class="label">Biaya Menu 100%</span><strong id="mBiaya">-</strong><small id="mBiayaNote"></small></div>
+      <div class="card safe"><span class="pin"></span><span class="label">Kepatuhan AKG</span><strong id="mSkor">-</strong><small id="mSkorNote">semua anggota</small></div>
+    </div>
+
+    <div id="mAlert" class="alert safe" style="margin-bottom:14px"></div>
+
+    <h3><svg class="ic"><use href="#i-family"></use></svg>Menu per Anggota</h3>
+    <div id="menuAnggotaBox" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px"></div>
+
+    <h3 style="margin-top:20px"><svg class="ic"><use href="#i-chart"></use></svg>Pemenuhan AKG per Anggota (100% = wajib)</h3>
+    <div id="mGiziBox"></div>
+  </div>
+
   <div class="panel" id="arsipPanel">
     <div class="arsip-head">
       <h3 style="margin:0"><svg class="ic"><use href="#i-scroll"></use></svg>Arsip Pelayaran Lifetime</h3>
@@ -554,13 +642,11 @@
     <div class="arsip-list" id="arsipList"></div>
   </div>
 
-  <!-- RENCANA FINANSIAL OTOMATIS -->
   <div class="panel" id="rencanaPanel">
     <h3><svg class="ic"><use href="#i-compass"></use></svg>Rencana Finansial Otomatis</h3>
-    <p class="muted" style="margin-bottom:14px">Dihitung otomatis dari data gaji, pengeluaran wajib, dan rata-rata pengeluaran di atas. Kamu hanya perlu mengisi target opsional.</p>
+    <p class="muted" style="margin-bottom:14px">Dihitung otomatis dari data gaji, pengeluaran wajib, dan rata-rata pengeluaran. Kamu hanya perlu mengisi target opsional.</p>
     <div class="plan-grid">
 
-      <!-- 1. DANA DARURAT -->
       <div class="plan">
         <span class="plan-badge">OTOMATIS</span>
         <h4><svg class="ic"><use href="#i-lifebuoy"></use></svg>Dana Darurat</h4>
@@ -594,7 +680,6 @@
         <span class="muted">*Isi saldo darurat yang sudah kamu miliki.</span>
       </div>
 
-      <!-- 2. KEHIDUPAN BERKELUARGA -->
       <div class="plan">
         <span class="plan-badge">OTOMATIS</span>
         <h4><svg class="ic"><use href="#i-family"></use></svg>Kehidupan Berkeluarga</h4>
@@ -604,27 +689,17 @@
         <div class="plan-kv">
           <span>Jumlah anggota keluarga</span><span id="famAnggota">-</span>
           <span>Biaya per anggota (est.)</span><span id="famPerOrang">-</span>
-          <span>Kondisi vs sisa gaji</span><span id="famKondisi">-</span>
-        </div>
-        <div class="plan-inputs">
-          <label>Jumlah anggota keluarga
-            <input id="inAnggota" type="number" min="1" max="10" value="2">
-          </label>
-          <label>Punya anak? (jumlah)
-            <input id="inAnak" type="number" min="0" max="10" value="0">
-          </label>
+          <span>Kondisi vs gaji</span><span id="famKondisi">-</span>
         </div>
         <div class="plan-tip" id="tipFam"></div>
       </div>
 
-      <!-- 3. DANA PENSIUN -->
       <div class="plan">
         <span class="plan-badge">OTOMATIS</span>
         <h4><svg class="ic"><use href="#i-island"></use></svg>Dana Pensiun</h4>
         <div class="big" id="pensiunTarget">-</div>
         <div class="sub">Dana yang dibutuhkan agar hidup tetap sama setelah pensiun, memakai aturan 4% per tahun.</div>
         <div class="plan-kv">
-          <span>Usia sekarang</span><span id="pensiunUsiaNow">-</span>
           <span>Tahun menuju pensiun</span><span id="pensiunTahun">-</span>
           <span>Pengeluaran per bulan (saat pensiun, inflasi)</span><span id="pensiunKeluar">-</span>
           <span>Setoran per bulan dibutuhkan</span><span id="pensiunSetor">-</span>
@@ -648,16 +723,14 @@
         <div class="saran" id="saranPensiun"></div>
       </div>
 
-      <!-- 4. TARGET 1 MILIAR 5 TAHUN -->
       <div class="plan">
         <span class="plan-badge">OTOMATIS</span>
-        <h4><svg class="ic"><use href="#i-treasure"></use></svg>Target Rp 1 Miliar / 5 Tahun</h4>
+        <h4><svg class="ic"><use href="#i-treasure"></use></svg>Target Dana Besar</h4>
         <div class="big" id="milyarSetor">-</div>
-        <div class="sub">Setoran bulanan yang dibutuhkan untuk mengumpulkan target dalam 5 tahun dengan bunga majemuk.</div>
+        <div class="sub">Setoran bulanan yang dibutuhkan untuk mencapai target dalam jangka waktu tertentu dengan bunga majemuk.</div>
         <div class="plan-kv">
           <span>Target dana</span><span id="milyarTarget">-</span>
           <span>Jangka waktu</span><span id="milyarWaktu">-</span>
-          <span>Setoran bulanan dibutuhkan</span><span id="milyarSetor2">-</span>
           <span>Sisa gaji tersedia</span><span id="milyarTersedia">-</span>
           <span>Kondisi</span><span id="milyarKondisi">-</span>
           <span>Proyeksi dengan sisa gaji</span><span id="milyarProyeksi">-</span>
@@ -683,7 +756,6 @@
     </div>
   </div>
 
-  <!-- SINKRONISASI KODE AKSES -->
   <div class="panel" id="syncPanel">
     <h3><svg class="ic"><use href="#i-shield"></use></svg>Sinkronisasi Lintas Perangkat</h3>
     <p class="muted" style="margin-bottom:10px">
@@ -699,17 +771,16 @@
     <div id="syncStatus">Status: Lokal (tanpa kode)</div>
   </div>
 
-  <!-- SETTINGS -->
   <details class="panel">
     <summary><svg class="ic"><use href="#i-gear"></use></svg>Pengaturan Anggaran</summary>
     <div class="grid3">
-      <label>Gaji (Rp)
+      <label class="field-label" style="color:var(--gold)">Gaji (Rp)
         <div class="money-wrap"><span class="rp" style="color:var(--ink)">Rp</span><input class="dark-field money" type="text" inputmode="numeric" id="setGaji" autocomplete="off"></div>
       </label>
-      <label>Biaya Rumah/Kost (Rp)
+      <label class="field-label" style="color:var(--gold)">Biaya Rumah/Kost (Rp)
         <div class="money-wrap"><span class="rp" style="color:var(--ink)">Rp</span><input class="dark-field money" type="text" inputmode="numeric" id="setRumah" autocomplete="off"></div>
       </label>
-      <label>Token Listrik (Rp)
+      <label class="field-label" style="color:var(--gold)">Token Listrik (Rp)
         <div class="money-wrap"><span class="rp" style="color:var(--ink)">Rp</span><input class="dark-field money" type="text" inputmode="numeric" id="setListrik" autocomplete="off"></div>
       </label>
     </div>
@@ -721,12 +792,35 @@
 
 <script>
 /* =========================================================
-   FORMAT RUPIAH OTOMATIS (standar Indonesia: titik ribuan)
+   UTIL
    ========================================================= */
+const $ = id => document.getElementById(id);
 const onlyDigits = s => String(s ?? '').replace(/\D/g,'');
 const fmtInput  = n => (n===null||n===undefined||n==='') ? '' : new Intl.NumberFormat('id-ID').format(Number(n));
 const parseMoney = s => { const d = onlyDigits(s); return d==='' ? null : Number(d); };
+const rp = n => 'Rp '+new Intl.NumberFormat('id-ID').format(Math.round(n||0));
+const rpShort = n => {
+  const a = Math.abs(n);
+  if(a>=1e9) return 'Rp '+(n/1e9).toLocaleString('id-ID',{maximumFractionDigits:2})+' M';
+  if(a>=1e6) return 'Rp '+(n/1e6).toLocaleString('id-ID',{maximumFractionDigits:1})+' jt';
+  if(a>=1e3) return 'Rp '+(n/1e3).toLocaleString('id-ID',{maximumFractionDigits:0})+' rb';
+  return rp(n);
+};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+const ymd = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const parseYmd = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); };
+const fmtShort = d => d.toLocaleDateString('id-ID',{day:'2-digit',month:'short'});
+const icon = (id, cls='ic') => `<svg class="${cls}"><use href="#${id}"/></svg>`;
+const csvCell = v => `"${String(v).replace(/"/g,'""')}"`;
+const num = (v,d=1) => Number(v||0).toLocaleString('id-ID',{maximumFractionDigits:d});
 
+function download(name, content, type){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([content],{type}));
+  a.download=name; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
 function bindMoney(el, onChange){
   el.addEventListener('input', e=>{
     const raw = onlyDigits(e.target.value);
@@ -740,361 +834,145 @@ function bindMoney(el, onChange){
 }
 
 /* =========================================================
-   SIKLUS: tanggal 28 s/d 27 bulan berikutnya
+   PRNG deterministik (variasi menu)
    ========================================================= */
-const LS_KEY     = 'grandLineBudgetV2';
-const LS_ARSIP   = 'grandLineArsipV1';
-const LS_PLAN    = 'grandLinePlanV1';
-const LS_CODE    = 'grandLineSyncCode';
-const LS_BASE    = 'grandLineBaseUpdatedAt';
-const CYCLE_START_DAY = 28;
-const pad = n => String(n).padStart(2,'0');
-const ymd = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
-const parseYmd = s => { const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); };
-
-function cycleStartFor(d){
-  let m = d.getMonth();
-  if(d.getDate() < CYCLE_START_DAY) m -= 1;
-  return new Date(d.getFullYear(), m, CYCLE_START_DAY);
+function hashSeed(str){
+  let h = 1779033703 ^ str.length;
+  for(let i=0;i<str.length;i++){
+    h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+    h = (h << 13) | (h >>> 19);
+  }
+  return h >>> 0;
 }
-function cycleEndFor(s){ return new Date(s.getFullYear(), s.getMonth()+1, CYCLE_START_DAY-1); }
-
-const today    = new Date();
-const curStart = cycleStartFor(today);
-const curEnd   = cycleEndFor(curStart);
-const curKey   = ymd(curStart);
+function mulberry32(a){
+  return function(){
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
 /* =========================================================
-   KATEGORI
+   SIKLUS 28 → 27
    ========================================================= */
-const KATEGORI = [
-  {id:'Makan',         icon:'i-food'},
-  {id:'Transport',     icon:'i-transport'},
+const LS_KEY='grandLineBudgetV3', LS_ARSIP='grandLineArsipV1', LS_PLAN='grandLinePlanV1',
+      LS_ANGGOTA='grandLineAnggotaV2', LS_MENUVAR='grandLineMenuVarV2',
+      LS_CODE='grandLineSyncCode', LS_BASE='grandLineBaseUpdatedAt', LS_WAJIB='grandLineWajib100';
+const CYCLE_START_DAY = 28;
+function cycleStartFor(d){ let m=d.getMonth(); if(d.getDate()<CYCLE_START_DAY) m-=1; return new Date(d.getFullYear(),m,CYCLE_START_DAY); }
+function cycleEndFor(s){ return new Date(s.getFullYear(),s.getMonth()+1,CYCLE_START_DAY-1); }
+const today=new Date(), curStart=cycleStartFor(today), curEnd=cycleEndFor(curStart), curKey=ymd(curStart);
+
+/* =========================================================
+   KATEGORI PENGELUARAN
+   ========================================================= */
+const KATEGORI=[
+  {id:'Makan',icon:'i-food'},
+  {id:'Transport',icon:'i-transport'},
   {id:'Kuota/Internet',icon:'i-wifi'},
-  {id:'Belanja',       icon:'i-bag'},
-  {id:'Hiburan',       icon:'i-music'},
-  {id:'Kesehatan',     icon:'i-heart'},
-  {id:'Lainnya',       icon:'i-dot'}
+  {id:'Belanja',icon:'i-bag'},
+  {id:'Hiburan',icon:'i-music'},
+  {id:'Kesehatan',icon:'i-heart'},
+  {id:'Lainnya',icon:'i-dot'}
 ];
 const iconOf = k => (KATEGORI.find(x=>x.id===k)||KATEGORI[6]).icon;
 
 /* =========================================================
    STATE
    ========================================================= */
-const DEFAULT = { gaji:5000000, wajibRumah:1600000, wajibListrik:500000 };
-let autoReset = false;
-let archiveAutoSaved = false;
-let state = load();
-let arsip = loadArsip();
+const DEFAULT={gaji:5000000,wajibRumah:1600000,wajibListrik:500000};
+let archiveAutoSaved=false, autoReset=false;
+let wajib100 = localStorage.getItem(LS_WAJIB)!=='0';
+let state=loadState(), arsip=loadArsip(), plan=loadPlan(), anggota=loadAnggota(), menuVar=loadMenuVar();
 
-function load(){
+function loadState(){
   let s=null;
-  try{ s = JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ s=null; }
-  if(!s || typeof s.gaji!=='number') s = {...DEFAULT, siklus:curKey, saldoAktual:null, pengeluaran:[]};
+  try{ s=JSON.parse(localStorage.getItem(LS_KEY)); }catch(e){ s=null; }
+  if(!s||typeof s.gaji!=='number') s={...DEFAULT,siklus:curKey,saldoAktual:null,pengeluaran:[]};
   if(!Array.isArray(s.pengeluaran)) s.pengeluaran=[];
-  if(s.siklus !== curKey){
-    if(s.pengeluaran.length || (s.saldoAktual!=null && s.saldoAktual!=='')){
-      archiveSiklus(s);
-      archiveAutoSaved = true;
-    }
-    s = {gaji:s.gaji, wajibRumah:s.wajibRumah, wajibListrik:s.wajibListrik,
-         siklus:curKey, saldoAktual:null, pengeluaran:[]};
-    autoReset = true;
+  if(s.siklus!==curKey){
+    if(s.pengeluaran.length||(s.saldoAktual!=null&&s.saldoAktual!=='')){ archiveSiklus(s); archiveAutoSaved=true; }
+    s={gaji:s.gaji,wajibRumah:s.wajibRumah,wajibListrik:s.wajibListrik,siklus:curKey,saldoAktual:null,pengeluaran:[]};
+    autoReset=true;
   }
   return s;
 }
-const save = () => { localStorage.setItem(LS_KEY, JSON.stringify(state)); queueSync(); };
-
-/* Input rencana finansial tersimpan */
-let plan = loadPlan();
-function loadPlan(){
-  try{ const p = JSON.parse(localStorage.getItem(LS_PLAN)); if(p && typeof p==='object') return p; }catch(e){}
-  return {};
+function loadArsip(){ try{ const a=JSON.parse(localStorage.getItem(LS_ARSIP)); if(Array.isArray(a)) return a; }catch(e){} return []; }
+function loadPlan(){ try{ const p=JSON.parse(localStorage.getItem(LS_PLAN)); if(p&&typeof p==='object') return p; }catch(e){} return {}; }
+function loadAnggota(){
+  try{ const a=JSON.parse(localStorage.getItem(LS_ANGGOTA)); if(Array.isArray(a)&&a.length) return a; }catch(e){}
+  return [{id:'ag1',nama:'Saya',jk:'L',tglLahir:'',kelompok:'19-29',kondisi:'none'}];
 }
-const savePlan = () => { localStorage.setItem(LS_PLAN, JSON.stringify(plan)); queueSync(); };
+function loadMenuVar(){
+  try{ const m=JSON.parse(localStorage.getItem(LS_MENUVAR));
+    if(m && m.date===ymd(today) && typeof m.global==='number') return {date:m.date,global:m.global,per:m.per||{}};
+  }catch(e){}
+  return {date:ymd(today),global:0,per:{}};
+}
+const save        = () => { localStorage.setItem(LS_KEY,JSON.stringify(state)); queueSync(); };
+const saveArsip   = () => { localStorage.setItem(LS_ARSIP,JSON.stringify(arsip)); queueSync(); };
+const savePlan    = () => { localStorage.setItem(LS_PLAN,JSON.stringify(plan)); queueSync(); };
+const saveAnggota = () => { localStorage.setItem(LS_ANGGOTA,JSON.stringify(anggota)); queueSync(); };
+const saveMenuVar = () => { localStorage.setItem(LS_MENUVAR,JSON.stringify(menuVar)); queueSync(); };
+
+function ensureMenuVarToday(){
+  const t=ymd(new Date());
+  if(menuVar.date!==t){ menuVar={date:t,global:0,per:{}}; saveMenuVar(); }
+}
+function seedFor(a){
+  const v=(menuVar.global||0)+(menuVar.per[a.id]||0);
+  return `menu|${menuVar.date}|v${v}|${a.id}|${a.jk}|${a.kelompok}|${a.kondisi||'none'}`;
+}
 
 /* =========================================================
    ARSIP LIFETIME
    ========================================================= */
-function loadArsip(){
-  try{
-    const a = JSON.parse(localStorage.getItem(LS_ARSIP));
-    if(Array.isArray(a)) return a;
-  }catch(e){}
-  return [];
-}
-const saveArsip = () => { localStorage.setItem(LS_ARSIP, JSON.stringify(arsip)); queueSync(); };
-
+const STATUS_LABEL={safe:'AMAN',warn:'WASPADA',danger:'BAHAYA'};
 function snapshotSiklus(s){
-  const totalWajib = s.wajibRumah + s.wajibListrik;
-  const sisaGaji   = s.gaji - totalWajib;
-  const terpakai   = s.pengeluaran.reduce((a,b)=>a+b.nominal,0);
-  const sisaHitung = sisaGaji - terpakai;
-  const manual     = !(s.saldoAktual==null || s.saldoAktual==='');
-  const sisaFinal  = manual ? Number(s.saldoAktual) : sisaHitung;
-  const perKat = {};
-  s.pengeluaran.forEach(p=>perKat[p.kategori]=(perKat[p.kategori]||0)+p.nominal);
-  const startD = parseYmd(s.siklus);
-  const endD   = cycleEndFor(startD);
-  const pct    = sisaGaji>0 ? (terpakai/sisaGaji)*100 : 100;
-  let status = 'safe';
-  if(sisaFinal<0 || pct>=90) status='danger';
-  else if(pct>=70) status='warn';
-  return {
-    id: s.siklus,
-    mulai: ymd(startD),
-    selesai: ymd(endD),
-    label: `${fmtShort(startD)} ${startD.getFullYear()} - ${fmtShort(endD)} ${endD.getFullYear()}`,
-    gaji: s.gaji, wajibRumah: s.wajibRumah, wajibListrik: s.wajibListrik,
-    totalWajib, sisaGaji, terpakai,
-    sisaSaldo: Math.round(sisaFinal),
-    saldoManual: manual,
-    persenTerpakai: +pct.toFixed(1),
-    status,
-    jumlahTransaksi: s.pengeluaran.length,
-    perKategori: perKat,
-    pengeluaran: s.pengeluaran.map(p=>({...p})),
-    diarsipkan: new Date().toISOString()
-  };
+  const totalWajib=s.wajibRumah+s.wajibListrik, sisaGaji=s.gaji-totalWajib;
+  const terpakai=s.pengeluaran.reduce((a,b)=>a+b.nominal,0);
+  const manual=!(s.saldoAktual==null||s.saldoAktual==='');
+  const sisaFinal=manual?Number(s.saldoAktual):(sisaGaji-terpakai);
+  const perKat={}; s.pengeluaran.forEach(p=>perKat[p.kategori]=(perKat[p.kategori]||0)+p.nominal);
+  const startD=parseYmd(s.siklus), endD=cycleEndFor(startD);
+  const pct=sisaGaji>0?(terpakai/sisaGaji)*100:100;
+  let st='safe'; if(sisaFinal<0||pct>=90) st='danger'; else if(pct>=70) st='warn';
+  return {id:s.siklus,mulai:ymd(startD),selesai:ymd(endD),
+    label:`${fmtShort(startD)} ${startD.getFullYear()} - ${fmtShort(endD)} ${endD.getFullYear()}`,
+    gaji:s.gaji,wajibRumah:s.wajibRumah,wajibListrik:s.wajibListrik,totalWajib,sisaGaji,terpakai,
+    sisaSaldo:Math.round(sisaFinal),saldoManual:manual,persenTerpakai:+pct.toFixed(1),status:st,
+    jumlahTransaksi:s.pengeluaran.length,perKategori:perKat,
+    pengeluaran:s.pengeluaran.map(p=>({...p})),diarsipkan:new Date().toISOString()};
 }
 function archiveSiklus(s){
-  const snap = snapshotSiklus(s);
-  const idx = arsip.findIndex(a=>a.id===snap.id);
-  if(idx>=0) arsip[idx]=snap; else arsip.push(snap);
-  arsip.sort((a,b)=>a.id.localeCompare(b.id));
-  saveArsip();
+  const snap=snapshotSiklus(s);
+  const i=arsip.findIndex(a=>a.id===snap.id);
+  if(i>=0) arsip[i]=snap; else arsip.push(snap);
+  arsip.sort((a,b)=>a.id.localeCompare(b.id)); saveArsip();
 }
 function syncArsipAktif(){
-  if(state.pengeluaran.length || (state.saldoAktual!=null && state.saldoAktual!=='')){
-    archiveSiklus(state);
-  }
+  if(state.pengeluaran.length||(state.saldoAktual!=null&&state.saldoAktual!=='')) archiveSiklus(state);
 }
-
-/* =========================================================
-   HELPER
-   ========================================================= */
-const $ = id => document.getElementById(id);
-const rp = n => 'Rp '+new Intl.NumberFormat('id-ID').format(Math.round(n));
-const rpShort = n => {
-  const a = Math.abs(n);
-  if(a>=1e9) return 'Rp '+(n/1e9).toLocaleString('id-ID',{maximumFractionDigits:2})+' M';
-  if(a>=1e6) return 'Rp '+(n/1e6).toLocaleString('id-ID',{maximumFractionDigits:1})+' jt';
-  return rp(n);
-};
-const esc = s => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const fmtShort = d => d.toLocaleDateString('id-ID',{day:'2-digit',month:'short'});
-const icon = (id, cls='ic') => `<svg class="${cls}"><use href="#${id}"/></svg>`;
-
-function download(name, content, type){
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([content],{type}));
-  a.download=name; a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-}
-const csvCell = v => `"${String(v).replace(/"/g,'""')}"`;
-
-/* =========================================================
-   KALKULASI SIKLUS AKTIF
-   ========================================================= */
-function compute(){
-  const totalWajib = state.wajibRumah + state.wajibListrik;
-  const sisaGaji   = state.gaji - totalWajib;
-  const terpakai   = state.pengeluaran.reduce((a,b)=>a+b.nominal,0);
-  const hitungSisa = sisaGaji - terpakai;
-  const manual     = state.saldoAktual!==null && state.saldoAktual!=='';
-  const sisa       = manual ? Number(state.saldoAktual) : hitungSisa;
-  const pct        = sisaGaji>0 ? (terpakai/sisaGaji)*100 : 100;
-
-  const t0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const totalHari = Math.round((curEnd-curStart)/86400000)+1;
-  const sisaHari  = Math.max(1, Math.round((curEnd-t0)/86400000)+1);
-  const hariLewat = Math.max(1, totalHari-sisaHari+1);
-  const jatahHarian = sisa>0 ? sisa/sisaHari : 0;
-  const rataHarian  = terpakai/hariLewat;
-  const proyeksi    = rataHarian*totalHari;
-  return {totalWajib,sisaGaji,terpakai,hitungSisa,sisa,manual,pct,sisaHari,totalHari,hariLewat,jatahHarian,rataHarian,proyeksi};
-}
-
-/* =========================================================
-   AUTO WARNING
-   ========================================================= */
-function saldoLevel(d){
-  if(d.sisaGaji<=0 || d.sisa<0) return 'danger';
-  if(d.sisa < d.sisaGaji*0.1 || d.pct>=90) return 'danger';
-  if(d.pct>=70 || d.jatahHarian<50000) return 'warn';
-  return 'safe';
-}
-function status(d){
-  const lvl = saldoLevel(d);
-  if(d.sisaGaji<=0) return {level:lvl,title:'Konfigurasi Tidak Valid',
-    msg:'Pengeluaran wajib melebihi atau sama dengan gaji. Periksa Pengaturan Anggaran.', icon:'i-warn'};
-  if(d.sisa<0) return {level:lvl,title:'KAPAL TENGGELAM!',
-    msg:`Saldo minus <b>${rp(-d.sisa)}</b>. Hentikan semua pengeluaran non-esensial sekarang.`, icon:'i-skull'};
-  if(lvl==='danger') return {level:lvl,title:'ZONA BAHAYA',
-    msg:`Sisa saldo tinggal <b>${rp(d.sisa)}</b>. Prioritaskan kebutuhan pokok saja!`, icon:'i-skull'};
-  if(lvl==='warn') return {level:lvl,title:'BADAI MENDEKAT',
-    msg:`Sudah terpakai <b>${d.pct.toFixed(0)}%</b>. Jatah harian <b>${rp(d.jatahHarian)}</b> untuk ${d.sisaHari} hari tersisa.`, icon:'i-warn'};
-  return {level:lvl,title:'LAUT TENANG',
-    msg:`Sisa saldo <b>${rp(d.sisa)}</b>. Jatah harian <b>${rp(d.jatahHarian)}</b> untuk ${d.sisaHari} hari tersisa.`, icon:'i-shield'};
-}
-
-/* =========================================================
-   RENDER UTAMA
-   ========================================================= */
-function render(){
-  const d = compute();
-  const lvl = saldoLevel(d);
-
-  $('siklusInfo').textContent =
-    `Siklus ${fmtShort(curStart)} ${curStart.getFullYear()} s/d ${fmtShort(curEnd)} ${curEnd.getFullYear()} • hari ke-${d.hariLewat} dari ${d.totalHari}`;
-
-  $('cGaji').textContent = rp(state.gaji);
-  $('cWajib').textContent = rp(d.totalWajib);
-  $('cWajibPct').textContent = state.gaji>0 ? ((d.totalWajib/state.gaji)*100).toFixed(1)+'% dari gaji' : '-';
-  $('cSisaGaji').textContent = rp(d.sisaGaji);
-  $('cTerpakai').textContent = rp(d.terpakai);
-  $('cTerpakaiPct').textContent = d.pct.toFixed(0)+'% dari sisa gaji';
-  animateNumber($('cSisa'), d.sisa);
-  $('cardSisa').className = 'card '+lvl;
-  animateNumber($('cHarian'), d.jatahHarian);
-  $('cardHarian').className = 'card '+lvl;
-  $('cSisaHari').textContent = d.sisaHari+' hari tersisa';
-
-  const si = $('saldoAktual');
-  if(document.activeElement!==si) si.value = state.saldoAktual==null ? '' : fmtInput(state.saldoAktual);
-  si.className = 'saldo-input money '+lvl;
-  $('saldoNote').textContent = d.manual
-    ? `Manual • perhitungan: ${rp(d.hitungSisa)}`
-    : 'Otomatis (sisa gaji − terpakai)';
-
-  const fill = $('fill');
-  const pctClamp = Math.min(Math.max(d.pct,0),100);
-  fill.style.width = pctClamp+'%';
-  fill.style.background = lvl==='danger' ? 'linear-gradient(90deg,#ff3b5c,#ff8a3d)'
-                        : lvl==='warn'   ? 'linear-gradient(90deg,#ffb020,#ffd76a)'
-                        : 'linear-gradient(90deg,#3ddc84,#9af5c0)';
-  $('pctText').textContent = d.pct.toFixed(0)+'%';
-
-  $('prog').style.width = pctClamp+'%';
-  $('ship').style.left  = pctClamp+'%';
-  $('shipInfo').textContent = `Posisi kapal: ${d.pct.toFixed(0)}%`;
-
-  const s = status(d);
-  let extra='';
-  if(d.sisa>0 && d.proyeksi>d.sisaGaji && d.rataHarian>0){
-    extra = `<div class="extra">Proyeksi: dengan pola saat ini (${rp(d.rataHarian)}/hari), total pengeluaran siklus ≈ <b>${rp(d.proyeksi)}</b> — melebihi sisa gaji ${rp(d.sisaGaji)}.</div>`;
-  }
-  const box = $('alertBox');
-  const changed = box.className !== 'alert '+s.level;
-  box.className = 'alert '+s.level;
-  box.innerHTML = `<div class="ico"><svg viewBox="0 0 24 24"><use href="#${s.icon}"/></svg></div>
-                   <div><b>${s.title}</b><br>${s.msg}${extra}</div>`;
-  if(changed && s.level==='danger') burst();
-
-  renderKategori();
-  renderChart();
-  renderList();
-  renderArsip();
-  renderRencana();
-}
-
-function animateNumber(el, target){
-  const from = parseFloat(el.dataset.v||'0');
-  el.dataset.v = target;
-  const start = performance.now(), dur = 500;
-  (function step(t){
-    const p = Math.min((t-start)/dur,1);
-    el.textContent = rp(from + (target-from)*(1-Math.pow(1-p,3)));
-    if(p<1) requestAnimationFrame(step);
-  })(start);
-}
-
-function renderKategori(){
-  const map={};
-  state.pengeluaran.forEach(p=>map[p.kategori]=(map[p.kategori]||0)+p.nominal);
-  const total = Object.values(map).reduce((a,b)=>a+b,0);
-  const box = $('kategoriBox');
-  if(!total){ box.innerHTML='<p class="muted">Belum ada data.</p>'; return; }
-  box.innerHTML = Object.entries(map).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`
-    <div class="cat">
-      <div class="top"><span>${icon(iconOf(k))}${esc(k)}</span><span>${rp(v)} • ${(v/total*100).toFixed(0)}%</span></div>
-      <div class="bar"><div class="fill" style="width:${(v/total*100).toFixed(1)}%"></div></div>
-    </div>`).join('');
-}
-
-function renderChart(){
-  const days=[];
-  for(let i=0;i<=Math.round((curEnd-curStart)/86400000);i++){
-    const d=new Date(curStart); d.setDate(d.getDate()+i); days.push(d);
-  }
-  const perHari = days.map(d=>state.pengeluaran.filter(p=>ymd(new Date(p.tanggal))===ymd(d))
-                                   .reduce((a,b)=>a+b.nominal,0));
-  const max = Math.max(...perHari,1);
-  $('chart').innerHTML = perHari.map((v,i)=>
-    `<div data-tip="${fmtShort(days[i])}: ${rp(v)}" style="height:${v?Math.max(v/max*100,5):3}%;${v?'':'opacity:.25'}"></div>`).join('');
-  $('axisStart').textContent = fmtShort(curStart);
-  $('axisEnd').textContent = fmtShort(curEnd);
-  $('chartInfo').textContent = 'Maks: '+rp(max);
-}
-
-function renderList(){
-  const kats=[...new Set(state.pengeluaran.map(p=>p.kategori))];
-  const fKat=$('fKat'), cur=fKat.value;
-  fKat.innerHTML='<option value="">Semua kategori</option>'+kats.map(k=>`<option ${k===cur?'selected':''}>${esc(k)}</option>`).join('');
-
-  const q=$('fCari').value.trim().toLowerCase(), fk=fKat.value;
-  const list=state.pengeluaran.filter(p=>(!q||p.nama.toLowerCase().includes(q))&&(!fk||p.kategori===fk));
-
-  $('countInfo').textContent = list.length+' dari '+state.pengeluaran.length+' transaksi';
-  const ul=$('list');
-  if(!list.length){ ul.innerHTML='<li class="empty">Belum ada pelayaran tercatat.</li>'; return; }
-  ul.innerHTML = list.map(p=>`
-    <li>
-      <div class="li-info">
-        <span class="kicon">${icon(iconOf(p.kategori))}</span>
-        <div><b>${esc(p.nama)}</b><small>${esc(p.kategori)} • ${fmtShort(new Date(p.tanggal))}</small></div>
-      </div>
-      <div class="li-right">
-        <span class="amount">${rp(p.nominal)}</span>
-        <button class="del" data-id="${p.id}" title="Hapus">${icon('i-trash')}</button>
-      </div>
-    </li>`).join('');
-}
-
-/* =========================================================
-   ARSIP LIFETIME (render & ekspor)
-   ========================================================= */
-const STATUS_LABEL = {safe:'AMAN', warn:'WASPADA', danger:'BAHAYA'};
-
 function renderArsip(){
-  const totalSiklus = arsip.length;
-  const totalKeluar = arsip.reduce((a,b)=>a+b.terpakai,0);
-  const totalTx     = arsip.reduce((a,b)=>a+b.jumlahTransaksi,0);
-  const rataPct     = totalSiklus ? arsip.reduce((a,b)=>a+b.persenTerpakai,0)/totalSiklus : 0;
-  const aman        = arsip.filter(a=>a.status==='safe').length;
-  $('arsipStats').innerHTML = `
+  const totalSiklus=arsip.length, totalKeluar=arsip.reduce((a,b)=>a+b.terpakai,0);
+  const totalTx=arsip.reduce((a,b)=>a+b.jumlahTransaksi,0);
+  const rataPct=totalSiklus?arsip.reduce((a,b)=>a+b.persenTerpakai,0)/totalSiklus:0;
+  const aman=arsip.filter(a=>a.status==='safe').length;
+  $('arsipStats').innerHTML=`
     <div class="stat"><small>Total Siklus</small><strong>${totalSiklus}</strong></div>
     <div class="stat"><small>Total Pengeluaran</small><strong>${rp(totalKeluar)}</strong></div>
     <div class="stat"><small>Total Transaksi</small><strong>${totalTx}</strong></div>
     <div class="stat"><small>Rata-rata Terpakai</small><strong>${rataPct.toFixed(0)}%</strong></div>
     <div class="stat"><small>Siklus Aman</small><strong>${aman} / ${totalSiklus||0}</strong></div>`;
-
-  const list = $('arsipList');
-  if(!arsip.length){
-    list.innerHTML = '<div class="empty-arsip">Belum ada arsip. Siklus pertama akan tercatat otomatis saat kamu mulai mencatat pengeluaran.</div>';
-    return;
-  }
-  const sorted = arsip.slice().sort((a,b)=>b.id.localeCompare(a.id));
-  list.innerHTML = sorted.map(a=>{
-    const isAktif = a.id===curKey;
-    const pct = Math.min(a.persenTerpakai,100);
+  const list=$('arsipList');
+  if(!arsip.length){ list.innerHTML='<div class="empty-arsip">Belum ada arsip. Siklus pertama akan tercatat otomatis saat kamu mulai mencatat pengeluaran.</div>'; return; }
+  list.innerHTML=arsip.slice().sort((a,b)=>b.id.localeCompare(a.id)).map(a=>{
+    const isAktif=a.id===curKey, pct=Math.min(a.persenTerpakai,100);
     return `
     <div class="arsip-item ${isAktif?'aktif':''}">
       <div class="arsip-top">
-        <div>
-          <b>${esc(a.label)}</b>
-          <small>${a.jumlahTransaksi} transaksi • ${a.saldoManual?'saldo manual':'saldo otomatis'}</small>
-        </div>
+        <div><b>${esc(a.label)}</b><small>${a.jumlahTransaksi} transaksi • ${a.saldoManual?'saldo manual':'saldo otomatis'}</small></div>
         <span class="status-pill ${a.status}">${STATUS_LABEL[a.status]}</span>
       </div>
       <div class="arsip-meta">
@@ -1113,27 +991,18 @@ function renderArsip(){
     </div>`;
   }).join('');
 }
-
 function arsipToCSV(list){
   const rows=[['Siklus','Mulai','Selesai','Gaji','Wajib','Sisa Gaji','Terpakai','Sisa Saldo','Persen Terpakai','Status','Tanggal','Kategori','Keterangan','Nominal']];
   list.forEach(a=>{
-    if(!a.pengeluaran.length){
-      rows.push([a.label,a.mulai,a.selesai,a.gaji,a.totalWajib,a.sisaGaji,a.terpakai,a.sisaSaldo,a.persenTerpakai,STATUS_LABEL[a.status],'','','',0]);
-    }
-    a.pengeluaran.slice().reverse().forEach(p=>rows.push([
-      a.label,a.mulai,a.selesai,a.gaji,a.totalWajib,a.sisaGaji,a.terpakai,a.sisaSaldo,a.persenTerpakai,STATUS_LABEL[a.status],
-      ymd(new Date(p.tanggal)), p.kategori, p.nama, p.nominal
-    ]));
+    if(!a.pengeluaran.length) rows.push([a.label,a.mulai,a.selesai,a.gaji,a.totalWajib,a.sisaGaji,a.terpakai,a.sisaSaldo,a.persenTerpakai,STATUS_LABEL[a.status],'','','',0]);
+    a.pengeluaran.slice().reverse().forEach(p=>rows.push([a.label,a.mulai,a.selesai,a.gaji,a.totalWajib,a.sisaGaji,a.terpakai,a.sisaSaldo,a.persenTerpakai,STATUS_LABEL[a.status],ymd(new Date(p.tanggal)),p.kategori,p.nama,p.nominal]));
   });
   return '\uFEFF'+rows.map(r=>r.map(csvCell).join(',')).join('\n');
 }
-
 function arsipToReport(a){
-  const line = '='.repeat(56);
-  const cats = Object.entries(a.perKategori).sort((x,y)=>y[1]-x[1])
-     .map(([k,v])=>`  ${k.padEnd(16)} ${rp(v).padStart(18)}  (${(v/a.terpakai*100||0).toFixed(0)}%)`).join('\n') || '  -';
-  const tx = a.pengeluaran.slice().reverse().map(p=>
-     `  ${ymd(new Date(p.tanggal))}  ${p.kategori.padEnd(14)} ${p.nama.slice(0,22).padEnd(22)} ${rp(p.nominal).padStart(16)}`).join('\n') || '  -';
+  const line='='.repeat(56);
+  const cats=Object.entries(a.perKategori).sort((x,y)=>y[1]-x[1]).map(([k,v])=>`  ${k.padEnd(16)} ${rp(v).padStart(18)}  (${(v/a.terpakai*100||0).toFixed(0)}%)`).join('\n')||'  -';
+  const tx=a.pengeluaran.slice().reverse().map(p=>`  ${ymd(new Date(p.tanggal))}  ${p.kategori.padEnd(14)} ${p.nama.slice(0,22).padEnd(22)} ${rp(p.nominal).padStart(16)}`).join('\n')||'  -';
   return `${line}
 GRAND LINE BUDGET • LAPORAN SIKLUS
 ${line}
@@ -1156,332 +1025,999 @@ ${tx}
 ${line}
 `;
 }
-
-function buildArsipPayload(){
-  return {
-    app: 'Grand Line Budget',
-    versi: 3,
-    diekspor: new Date().toISOString(),
-    jumlahSiklus: arsip.length,
-    pengaturan: {gaji:state.gaji, wajibRumah:state.wajibRumah, wajibListrik:state.wajibListrik},
-    rencana: plan,
-    arsip
-  };
-}
-
 $('btnArsipExport').addEventListener('click', ()=>{
   syncArsipAktif();
-  download(`grandline-arsip-${ymd(new Date())}.json`, JSON.stringify(buildArsipPayload(),null,2), 'application/json');
-  toast('Arsip lifetime diekspor. Simpan file ini sebagai cadangan.','safe','i-archive');
+  download(`grandline-arsip-${ymd(new Date())}.json`,
+    JSON.stringify({app:'Grand Line Budget',versi:7,diekspor:new Date().toISOString(),jumlahSiklus:arsip.length,
+      pengaturan:{gaji:state.gaji,wajibRumah:state.wajibRumah,wajibListrik:state.wajibListrik},
+      rencana:plan,anggota,menuVar,wajib100,arsip},null,2),'application/json');
+  toast('Arsip lifetime diekspor.','safe','i-archive');
 });
 $('btnArsipCSV').addEventListener('click', ()=>{
   syncArsipAktif();
-  download(`grandline-arsip-${ymd(new Date())}.csv`, arsipToCSV(arsip), 'text/csv;charset=utf-8');
+  download(`grandline-arsip-${ymd(new Date())}.csv`,arsipToCSV(arsip),'text/csv;charset=utf-8');
   toast('Semua arsip diunduh sebagai CSV.','safe','i-download');
 });
 $('btnArsipImport').addEventListener('click', ()=>$('fileImport').click());
 $('fileImport').addEventListener('change', e=>{
-  const file = e.target.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ev=>{
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
     try{
-      const data = JSON.parse(ev.target.result);
-      const incoming = Array.isArray(data) ? data : data.arsip;
+      const data=JSON.parse(ev.target.result);
+      const incoming=Array.isArray(data)?data:data.arsip;
       if(!Array.isArray(incoming)) throw new Error('format');
-      let added=0, updated=0;
+      let added=0,updated=0;
       incoming.forEach(a=>{
-        if(!a || !a.id || !a.mulai) return;
-        const i = arsip.findIndex(x=>x.id===a.id);
+        if(!a||!a.id||!a.mulai) return;
+        const i=arsip.findIndex(x=>x.id===a.id);
         if(i>=0){ arsip[i]=a; updated++; } else { arsip.push(a); added++; }
       });
-      arsip.sort((x,y)=>x.id.localeCompare(y.id));
-      saveArsip();
-      if(data.rencana && typeof data.rencana==='object'){ plan = {...plan, ...data.rencana}; savePlan(); }
-      render();
+      arsip.sort((x,y)=>x.id.localeCompare(y.id)); saveArsip();
+      if(data.rencana&&typeof data.rencana==='object'){ plan={...plan,...data.rencana}; savePlan(); }
+      if(Array.isArray(data.anggota)&&data.anggota.length){ anggota=data.anggota; saveAnggota(); }
+      if(data.menuVar&&data.menuVar.date){ menuVar={date:data.menuVar.date,global:data.menuVar.global||0,per:data.menuVar.per||{}}; saveMenuVar(); }
+      if(typeof data.wajib100==='boolean'){ wajib100=data.wajib100; localStorage.setItem(LS_WAJIB,wajib100?'1':'0'); $('chkWajib').checked=wajib100; }
+      restorePlanInputs(); renderAnggotaList(); render();
       toast(`Impor selesai: ${added} siklus baru, ${updated} diperbarui.`,'safe','i-check');
-    }catch(err){
-      toast('File arsip tidak valid.','danger','i-warn');
-    }
+    }catch(err){ toast('File arsip tidak valid.','danger','i-warn'); }
     e.target.value='';
   };
   reader.readAsText(file);
 });
 $('arsipList').addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act]'); if(!btn) return;
-  const a = arsip.find(x=>x.id===btn.dataset.id); if(!a) return;
-  const act = btn.dataset.act;
-  if(act==='csv')  download(`siklus-${a.id}.csv`, arsipToCSV([a]), 'text/csv;charset=utf-8');
-  if(act==='json') download(`siklus-${a.id}.json`, JSON.stringify(a,null,2), 'application/json');
-  if(act==='txt')  download(`laporan-${a.id}.txt`, arsipToReport(a), 'text/plain;charset=utf-8');
+  const btn=e.target.closest('button[data-act]'); if(!btn) return;
+  const a=arsip.find(x=>x.id===btn.dataset.id); if(!a) return;
+  const act=btn.dataset.act;
+  if(act==='csv')  download(`siklus-${a.id}.csv`,arsipToCSV([a]),'text/csv;charset=utf-8');
+  if(act==='json') download(`siklus-${a.id}.json`,JSON.stringify(a,null,2),'application/json');
+  if(act==='txt')  download(`laporan-${a.id}.txt`,arsipToReport(a),'text/plain;charset=utf-8');
   if(act==='del'){
     if(!confirm(`Hapus arsip ${a.label} secara permanen?`)) return;
-    arsip = arsip.filter(x=>x.id!==a.id); saveArsip(); render();
-    toast('Arsip siklus dihapus.','safe','i-trash');
+    arsip=arsip.filter(x=>x.id!==a.id); saveArsip(); render(); toast('Arsip siklus dihapus.','safe','i-trash');
   }
 });
 
 /* =========================================================
-   RENCANA FINANSIAL OTOMATIS
+   KALKULASI SIKLUS
+   ========================================================= */
+function compute(){
+  const totalWajib=state.wajibRumah+state.wajibListrik, sisaGaji=state.gaji-totalWajib;
+  const terpakai=state.pengeluaran.reduce((a,b)=>a+b.nominal,0);
+  const hitungSisa=sisaGaji-terpakai;
+  const manual=state.saldoAktual!==null&&state.saldoAktual!=='';
+  const sisa=manual?Number(state.saldoAktual):hitungSisa;
+  const pct=sisaGaji>0?(terpakai/sisaGaji)*100:100;
+  const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  const totalHari=Math.round((curEnd-curStart)/86400000)+1;
+  const sisaHari=Math.max(1,Math.round((curEnd-t0)/86400000)+1);
+  const hariLewat=Math.max(1,totalHari-sisaHari+1);
+  const jatahHarian=sisa>0?sisa/sisaHari:0;
+  const rataHarian=terpakai/hariLewat;
+  return {totalWajib,sisaGaji,terpakai,hitungSisa,sisa,manual,pct,sisaHari,totalHari,hariLewat,jatahHarian,rataHarian,proyeksi:rataHarian*totalHari};
+}
+function saldoLevel(d){
+  if(d.sisaGaji<=0||d.sisa<0) return 'danger';
+  if(d.sisa<d.sisaGaji*0.1||d.pct>=90) return 'danger';
+  if(d.pct>=70||d.jatahHarian<50000) return 'warn';
+  return 'safe';
+}
+function status(d){
+  const lvl=saldoLevel(d);
+  if(d.sisaGaji<=0) return {level:lvl,title:'Konfigurasi Tidak Valid',msg:'Pengeluaran wajib melebihi atau sama dengan gaji. Periksa Pengaturan Anggaran.',icon:'i-warn'};
+  if(d.sisa<0) return {level:lvl,title:'KAPAL TENGGELAM!',msg:`Saldo minus <b>${rp(-d.sisa)}</b>. Hentikan semua pengeluaran non-esensial sekarang.`,icon:'i-skull'};
+  if(lvl==='danger') return {level:lvl,title:'ZONA BAHAYA',msg:`Sisa saldo tinggal <b>${rp(d.sisa)}</b>. Prioritaskan kebutuhan pokok saja!`,icon:'i-skull'};
+  if(lvl==='warn') return {level:lvl,title:'BADAI MENDEKAT',msg:`Sudah terpakai <b>${d.pct.toFixed(0)}%</b>. Jatah harian <b>${rp(d.jatahHarian)}</b> untuk ${d.sisaHari} hari tersisa.`,icon:'i-warn'};
+  return {level:lvl,title:'LAUT TENANG',msg:`Sisa saldo <b>${rp(d.sisa)}</b>. Jatah harian <b>${rp(d.jatahHarian)}</b> untuk ${d.sisaHari} hari tersisa.`,icon:'i-shield'};
+}
+
+/* =========================================================
+   DATABASE AKG — PERMENKES 28/2019 (Lampiran I)
+   36 zat gizi: energi, protein, lemak, karbohidrat, serat, air,
+   omega3, omega6, 14 vitamin, 14 mineral
+   ========================================================= */
+const NKEYS=['kkal','prot','lemak','karbo','serat','air','o3','o6',
+ 'A','D','E','K','B1','B2','B3','B5','B6','Folat','B12','Biotin','Kolin','C',
+ 'Ca','P','Mg','Fe','I','Zn','Se','Mn','F','Cr','Kal','Na','Cl','Cu'];
+function N(...v){ const o={}; NKEYS.forEach((k,i)=>o[k]=Number(v[i]||0)); return o; }
+
+const AKG_BAYI={
+ '0-5':N(550,9,31,59,0,700,0.5,4.4, 375,10,4,5, 0.2,0.3,2,1.7,0.1,80,0.4,5,125,40, 200,100,30,0.3,90,1.1,7,0.003,0.01,0.2,400,120,180,200),
+ '6-11':N(800,15,35,105,11,900,0.5,4.4, 400,10,5,10, 0.3,0.4,4,1.8,0.3,80,1.5,6,150,50, 270,275,55,11,120,3,10,0.7,0.5,6,700,370,570,220),
+ '1-3':N(1350,20,45,215,19,1150,0.7,7, 400,15,6,15, 0.5,0.5,6,2.0,0.5,160,1.5,8,200,40, 650,460,65,7,90,3,18,1.2,0.7,14,2600,800,1200,340)
+};
+const AKG_ANAK=()=>({
+ '4-6':N(1400,25,50,220,20,1450,0.9,10, 450,15,7,20, 0.6,0.6,8,3.0,0.6,200,1.5,12,250,45, 1000,500,95,10,120,5,21,1.5,1.0,16,2700,900,1300,440),
+ '7-9':N(1650,40,55,250,23,1650,0.9,10, 500,15,8,25, 0.9,0.9,10,4.0,1.0,300,2.0,12,375,45, 1000,500,135,10,120,5,22,1.7,1.4,21,3200,1000,1500,570)
+});
+const AKG_DEWASA={
+ L:{
+  ...AKG_ANAK(),
+  '10-12':N(2000,50,65,300,28,1850,1.2,12, 600,15,11,35, 1.1,1.3,12,5.0,1.3,400,3.5,20,375,50, 1200,1250,160,8,120,8,22,1.9,1.8,28,3900,1300,1900,700),
+  '13-15':N(2400,70,80,350,34,2100,1.6,16, 600,15,15,55, 1.2,1.3,16,5.0,1.3,400,4.0,25,550,75, 1200,1250,225,11,150,11,30,2.2,2.5,36,4800,1500,2300,795),
+  '16-18':N(2650,75,85,400,37,2300,1.6,16, 700,15,15,55, 1.2,1.3,16,5.0,1.3,400,4.0,30,550,90, 1200,1250,270,11,150,11,36,2.3,4.0,41,5300,1700,2500,890),
+  '19-29':N(2650,65,75,430,37,2500,1.6,17, 650,15,15,65, 1.2,1.3,16,5.0,1.3,400,4.0,30,550,90, 1000,700,360,9,150,11,30,2.3,4.0,36,4700,1500,2250,900),
+  '30-49':N(2550,65,70,415,36,2500,1.6,17, 650,15,15,65, 1.2,1.3,16,5.0,1.3,400,4.0,30,550,90, 1000,700,360,9,150,11,30,2.3,4.0,34,4700,1500,2250,900),
+  '50-64':N(2150,65,60,340,30,2500,1.6,14, 650,15,15,65, 1.2,1.3,16,5.0,1.7,400,4.0,30,550,90, 1200,700,360,9,150,11,30,2.3,4.0,29,4700,1300,2100,900),
+  '65-80':N(1800,64,50,275,25,1800,1.6,14, 650,20,15,65, 1.2,1.3,16,5.0,1.7,400,4.0,30,550,90, 1200,700,350,9,150,11,29,2.3,4.0,24,4700,1100,1900,900),
+  '80+':  N(1600,64,45,235,22,1600,1.6,14, 650,20,15,65, 1.2,1.3,16,5.0,1.7,400,4.0,30,550,90, 1200,700,350,9,150,11,29,2.3,4.0,21,4700,1000,1600,900)
+ },
+ P:{
+  ...AKG_ANAK(),
+  '10-12':N(1900,55,65,280,27,1850,1.0,10, 600,15,15,35, 1.0,1.0,12,5.0,1.2,400,3.5,20,375,50, 1200,1250,170,8,120,8,19,1.6,1.9,26,4400,1400,2100,700),
+  '13-15':N(2050,65,70,300,29,2100,1.1,11, 600,15,15,55, 1.1,1.0,14,5.0,1.2,400,4.0,25,400,65, 1200,1250,220,15,150,9,24,1.6,2.4,27,4800,1500,2300,795),
+  '16-18':N(2100,65,70,300,29,2150,1.1,11, 600,15,15,55, 1.1,1.0,14,5.0,1.2,400,4.0,30,425,75, 1200,1250,230,15,150,9,26,1.8,3.0,29,5000,1600,2400,890),
+  '19-29':N(2250,60,65,360,32,2350,1.1,12, 600,15,15,55, 1.1,1.1,14,5.0,1.3,400,4.0,30,425,75, 1000,700,330,18,150,8,24,1.8,3.0,30,4700,1500,2250,900),
+  '30-49':N(2150,60,60,340,30,2350,1.1,12, 600,15,15,55, 1.1,1.1,14,5.0,1.3,400,4.0,30,425,75, 1000,700,340,18,150,8,25,1.8,3.0,29,4700,1500,2250,900),
+  '50-64':N(1800,60,50,280,25,2350,1.1,11, 600,15,15,55, 1.1,1.1,14,5.0,1.5,400,4.0,30,425,75, 1200,700,340,8,150,8,25,1.8,3.0,24,4700,1400,2100,900),
+  '65-80':N(1550,58,45,230,22,1550,1.1,11, 600,20,20,55, 1.1,1.1,14,5.0,1.5,400,4.0,30,425,75, 1200,700,320,8,150,8,24,1.8,3.0,21,4700,1200,1900,900),
+  '80+':  N(1400,58,40,200,20,1400,1.1,11, 600,20,20,55, 1.1,1.1,14,5.0,1.5,400,4.0,30,425,75, 1200,700,320,8,150,8,24,1.8,3.0,19,4700,1000,1600,900)
+ }
+};
+const AKG_TAMBAH={
+ hamil1:{kkal:180,prot:1,lemak:2.3,karbo:25,serat:3,air:300,o3:0.3,o6:2,A:300,B1:0.3,B2:0.3,B3:4,B5:1,B6:0.6,Folat:200,B12:0.5,Kolin:25,C:10,Ca:200,I:70,Zn:2,Se:5,Mn:0.2,Cr:5,Cu:100},
+ hamil2:{kkal:300,prot:10,lemak:2.3,karbo:40,serat:4,air:300,o3:0.3,o6:2,A:300,B1:0.3,B2:0.3,B3:4,B5:1,B6:0.6,Folat:200,B12:0.5,Kolin:25,C:10,Ca:200,Fe:9,I:70,Zn:4,Se:5,Mn:0.2,Cr:5,Cu:100},
+ hamil3:{kkal:300,prot:30,lemak:2.3,karbo:40,serat:4,air:300,o3:0.3,o6:2,A:300,B1:0.3,B2:0.3,B3:4,B5:1,B6:0.6,Folat:200,B12:0.5,Kolin:25,C:10,Ca:200,Fe:9,I:70,Zn:4,Se:5,Mn:0.2,Cr:5,Cu:100},
+ menyusui1:{kkal:330,prot:20,lemak:2.2,karbo:45,serat:5,air:800,o3:0.2,o6:2,A:350,E:4,B1:0.4,B2:0.5,B3:3,B5:2,B6:0.6,Folat:100,B12:1.0,Biotin:5,Kolin:125,C:45,Ca:200,I:140,Zn:5,Se:10,Mn:0.8,Cr:20,Kal:400,Cu:400},
+ menyusui2:{kkal:400,prot:15,lemak:2.2,karbo:55,serat:6,air:650,o3:0.2,o6:2,A:350,E:4,B1:0.4,B2:0.5,B3:3,B5:2,B6:0.6,Folat:100,B12:1.0,Biotin:5,Kolin:125,C:45,Ca:200,I:140,Zn:5,Se:10,Mn:0.8,Cr:20,Kal:400,Cu:400}
+};
+const KONDISI_LABEL={none:'Normal',hamil1:'Hamil Trimester 1',hamil2:'Hamil Trimester 2',hamil3:'Hamil Trimester 3',
+ menyusui1:'Menyusui 6 bln pertama',menyusui2:'Menyusui 6 bln kedua'};
+
+const AKG_KELOMPOK=[
+ {key:'0-5',label:'0–5 bulan (bayi)'},{key:'6-11',label:'6–11 bulan (bayi)'},{key:'1-3',label:'1–3 tahun (batita)'},
+ {key:'4-6',label:'4–6 tahun'},{key:'7-9',label:'7–9 tahun'},{key:'10-12',label:'10–12 tahun'},
+ {key:'13-15',label:'13–15 tahun'},{key:'16-18',label:'16–18 tahun'},{key:'19-29',label:'19–29 tahun'},
+ {key:'30-49',label:'30–49 tahun'},{key:'50-64',label:'50–64 tahun'},{key:'65-80',label:'65–80 tahun'},{key:'80+',label:'80+ tahun'}
+];
+const GIZI_LABEL={
+ kkal:'Energi (kkal)',prot:'Protein (g)',lemak:'Lemak (g)',karbo:'Karbohidrat (g)',serat:'Serat (g)',air:'Air (ml)',
+ o3:'Omega 3 (g)',o6:'Omega 6 (g)',
+ A:'Vit A (RE)',D:'Vit D (mcg)',E:'Vit E (mg)',K:'Vit K (mcg)',B1:'Vit B1 (mg)',B2:'Vit B2 (mg)',B3:'Vit B3 (mg)',
+ B5:'Vit B5 (mg)',B6:'Vit B6 (mg)',Folat:'Folat (mcg)',B12:'Vit B12 (mcg)',Biotin:'Biotin (mcg)',Kolin:'Kolin (mg)',C:'Vit C (mg)',
+ Ca:'Kalsium (mg)',P:'Fosfor (mg)',Mg:'Magnesium (mg)',Fe:'Zat Besi (mg)',I:'Iodium (mcg)',Zn:'Seng (mg)',
+ Se:'Selenium (mcg)',Mn:'Mangan (mg)',F:'Fluor (mg)',Cr:'Kromium (mcg)',Kal:'Kalium (mg)',Na:'Natrium (mg)',
+ Cl:'Klor (mg)',Cu:'Tembaga (mcg)'
+};
+const GROUP={
+ 'Makro, Serat, Air & Asam Lemak':['kkal','prot','lemak','karbo','serat','air','o3','o6'],
+ 'Vitamin (14)':['A','D','E','K','B1','B2','B3','B5','B6','Folat','B12','Biotin','Kolin','C'],
+ 'Mineral (14)':['Ca','P','Mg','Fe','I','Zn','Se','Mn','F','Cr','Kal','Na','Cl','Cu']
+};
+
+function getTargetAnggota(jk,kelompok,kondisi){
+  const base=(AKG_BAYI[kelompok]) ? AKG_BAYI[kelompok] : (AKG_DEWASA[jk]?.[kelompok]);
+  if(!base) return null;
+  const t={...base};
+  if(kondisi&&kondisi!=='none'&&AKG_TAMBAH[kondisi]){
+    const x=AKG_TAMBAH[kondisi];
+    Object.entries(x).forEach(([k,v])=>{ t[k]=Number(t[k]||0)+Number(v); });
+  }
+  return t;
+}
+
+/* =========================================================
+   DATABASE MAKANAN LOKAL (per porsi, perkiraan TKPI 2020)
+   ========================================================= */
+const FOOD=[
+ {id:'nasi',nama:'Nasi putih 1 piring (150 g)',kat:'pokok',harga:4000,repeat:true,max:4,
+  kkal:200,prot:4,lemak:0.5,karbo:45,serat:0.5,air:90,o3:0.02,o6:0.15,A:0,D:0,E:0.1,K:0.1,B1:0.1,B2:0.02,B3:2,B5:0.5,B6:0.1,Folat:20,Biotin:1,Kolin:5,C:0,Ca:10,P:50,Mg:20,Fe:0.8,I:1,Zn:1,Se:5,Mn:0.8,F:0.1,Cr:3,Kal:50,Na:2,Cl:5,Cu:100},
+ {id:'nasiMerah',nama:'Nasi merah 1 piring (150 g)',kat:'pokok',harga:6000,repeat:true,max:3,
+  kkal:190,prot:4.5,lemak:1,karbo:40,serat:2.5,air:85,o3:0.02,o6:0.2,E:0.2,B1:0.15,B2:0.03,B3:2.2,B5:0.6,B6:0.15,Folat:25,Biotin:2,Kolin:8,Ca:15,P:80,Mg:60,Fe:1.2,I:2,Zn:1.4,Se:6,Mn:1.2,F:0.1,Cr:8,Kal:120,Na:5,Cl:8,Cu:120},
+ {id:'ubi',nama:'Ubi jalar rebus (120 g)',kat:'pokok',harga:3000,repeat:true,max:3,
+  kkal:130,prot:1.5,lemak:0.2,karbo:31,serat:3,air:90,o3:0.01,o6:0.05,A:700,E:0.5,K:1.8,B1:0.1,B2:0.05,B3:0.6,B5:0.8,B6:0.2,Folat:20,Biotin:2,Kolin:12,C:20,Ca:30,P:50,Mg:25,Fe:0.6,I:2,Zn:0.3,Se:0.7,Mn:0.5,F:0.1,Cr:2,Kal:450,Na:20,Cl:30,Cu:120},
+ {id:'singkong',nama:'Singkong rebus (120 g)',kat:'pokok',harga:2500,repeat:true,max:3,
+  kkal:180,prot:1.2,lemak:0.3,karbo:42,serat:1.8,air:70,A:5,E:0.2,K:1,B1:0.06,B2:0.04,B3:0.6,B5:0.2,B6:0.1,Folat:25,Biotin:1,Kolin:10,C:20,Ca:20,P:40,Mg:30,Fe:0.8,I:2,Zn:0.4,Se:0.7,Mn:0.4,F:0.1,Cr:1,Kal:300,Na:10,Cl:15,Cu:80},
+ {id:'kentang',nama:'Kentang rebus (150 g)',kat:'pokok',harga:3500,repeat:true,max:3,
+  kkal:130,prot:3,lemak:0.2,karbo:29,serat:2.5,air:110,A:2,E:0.1,K:2,B1:0.1,B2:0.05,B3:1.5,B5:0.5,B6:0.3,Folat:20,Biotin:0.5,Kolin:15,C:20,Ca:15,P:60,Mg:30,Fe:1.2,I:2,Zn:0.4,Se:0.5,Mn:0.2,F:0.1,Cr:2,Kal:500,Na:8,Cl:20,Cu:100},
+ {id:'roti',nama:'Roti gandum 2 lembar (60 g)',kat:'pokok',harga:6000,repeat:true,max:3,
+  kkal:150,prot:6,lemak:2,karbo:28,serat:4,air:25,o3:0.1,o6:0.5,E:0.3,K:3,B1:0.2,B2:0.1,B3:2,B5:0.6,B6:0.1,Folat:40,Biotin:2,Kolin:10,Ca:40,P:120,Mg:40,Fe:1.5,I:5,Zn:0.8,Se:10,Mn:0.8,F:0.1,Cr:5,Kal:150,Na:280,Cl:450,Cu:80},
+ {id:'oat',nama:'Bubur oat 50 g + susu',kat:'pokok',harga:7000,repeat:true,max:2,
+  kkal:230,prot:9,lemak:4,karbo:38,serat:5,air:150,o3:0.05,o6:0.8,A:60,D:1.0,E:0.5,K:1,B1:0.3,B2:0.2,B3:1,B5:0.7,B6:0.2,Folat:30,B12:0.5,Biotin:3,Kolin:25,C:1,Ca:150,P:250,Mg:70,Fe:2.5,I:15,Zn:1.5,Se:8,Mn:1.5,F:0.1,Cr:12,Kal:350,Na:90,Cl:120,Cu:150},
+ {id:'bihun',nama:'Bihun goreng 1 porsi (150 g)',kat:'pokok',harga:5000,repeat:true,max:2,
+  kkal:220,prot:4,lemak:5,karbo:40,serat:1.5,air:90,A:30,E:0.3,K:2,B1:0.1,B2:0.05,B3:1.2,B5:0.3,B6:0.1,Folat:15,Biotin:0.5,Kolin:8,C:5,Ca:15,P:50,Mg:20,Fe:0.8,I:2,Zn:0.5,Se:3,Mn:0.3,F:0.1,Cr:1,Kal:100,Na:300,Cl:450,Cu:60},
+ {id:'telur',nama:'Telur ayam rebus (50 g)',kat:'hewani',harga:3000,repeat:true,max:3,
+  kkal:78,prot:6.3,lemak:5.3,karbo:0.6,air:38,o3:0.05,o6:0.4,A:95,D:1.1,E:0.7,K:0.1,B1:0.04,B2:0.23,B3:0.05,B5:0.7,B6:0.07,Folat:22,B12:0.6,Biotin:10,Kolin:147,Ca:28,P:86,Mg:6,Fe:0.9,I:20,Zn:0.6,Se:9.5,Mn:0.02,F:0.01,Cr:0.5,Kal:63,Na:62,Cl:80,Cu:40},
+ {id:'ikan',nama:'Ikan nila/lele goreng (100 g)',kat:'hewani',harga:8000,repeat:true,max:2,
+  kkal:180,prot:19,lemak:10,karbo:4,air:60,o3:0.3,o6:1.2,A:20,D:4,E:1.0,K:0.5,B1:0.1,B2:0.1,B3:3.5,B5:0.8,B6:0.3,Folat:20,B12:3.0,Biotin:5,Kolin:90,C:0,Ca:20,P:200,Mg:30,Fe:1.0,I:30,Zn:1.2,Se:25,Mn:0.1,F:0.1,Cr:3,Kal:300,Na:70,Cl:100,Cu:100},
+ {id:'kembung',nama:'Ikan kembung goreng (80 g)',kat:'hewani',harga:7000,repeat:true,max:2,
+  kkal:170,prot:18,lemak:10,karbo:2,air:55,o3:1.5,o6:1.0,A:30,D:5,E:1.2,K:1,B1:0.05,B2:0.15,B3:3.0,B5:0.7,B6:0.3,Folat:15,B12:4.0,Biotin:5,Kolin:80,C:0,Ca:80,P:180,Mg:35,Fe:1.2,I:25,Zn:1.0,Se:28,Mn:0.05,F:0.1,Cr:3,Kal:280,Na:80,Cl:120,Cu:80},
+ {id:'teri',nama:'Ikan teri kering (30 g) — sumber kalsium',kat:'hewani',harga:3000,repeat:true,max:2,
+  kkal:90,prot:15,lemak:2,karbo:1,air:5,o3:0.5,o6:0.3,A:15,D:1.5,E:0.5,K:0.2,B1:0.02,B2:0.1,B3:3,B5:0.5,B6:0.1,Folat:10,B12:1.0,Biotin:3,Kolin:60,Ca:300,P:250,Mg:60,Fe:2.5,I:40,Zn:1.5,Se:30,Mn:0.2,F:0.2,Cr:4,Kal:300,Na:700,Cl:1000,Cu:100},
+ {id:'udang',nama:'Udang goreng (100 g)',kat:'hewani',harga:10000,repeat:true,max:2,
+  kkal:150,prot:20,lemak:6,karbo:2,air:70,o3:0.3,o6:0.3,A:30,D:1.0,E:1.5,K:0.5,B1:0.05,B2:0.1,B3:2.5,B5:0.5,B6:0.2,Folat:15,B12:1.5,Biotin:3,Kolin:80,Ca:60,P:180,Mg:35,Fe:1.5,I:40,Zn:1.4,Se:30,Mn:0.05,F:0.1,Cr:2,Kal:250,Na:150,Cl:220,Cu:300},
+ {id:'ayam',nama:'Ayam goreng/bakar 1 potong (80 g)',kat:'hewani',harga:12000,repeat:true,max:2,
+  kkal:200,prot:20,lemak:12,karbo:3,air:45,o3:0.1,o6:1.5,A:50,D:0.3,E:0.3,K:1,B1:0.1,B2:0.2,B3:6.0,B5:1.0,B6:0.4,Folat:10,B12:0.4,Biotin:4,Kolin:70,Ca:15,P:190,Mg:22,Fe:1.0,I:5,Zn:2.0,Se:18,Mn:0.02,F:0.05,Cr:4,Kal:250,Na:80,Cl:110,Cu:60},
+ {id:'hati',nama:'Hati ayam (50 g) — besi & vit A tinggi',kat:'hewani',harga:5000,repeat:true,max:2,
+  kkal:90,prot:11,lemak:4,karbo:1,air:30,o3:0.05,o6:0.5,A:3000,D:0.3,E:0.5,K:0.5,B1:0.1,B2:1.5,B3:7,B5:3.0,B6:0.5,Folat:250,B12:16,Biotin:20,Kolin:250,C:15,Ca:6,P:260,Mg:15,Fe:6.0,I:8,Zn:2.5,Se:40,Mn:0.2,F:0.05,Cr:5,Kal:200,Na:50,Cl:70,Cu:400},
+ {id:'daging',nama:'Daging sapi masak (60 g)',kat:'hewani',harga:15000,repeat:true,max:2,
+  kkal:150,prot:16,lemak:9,karbo:1,air:40,o3:0.05,o6:0.5,A:10,D:0.1,E:0.3,K:1,B1:0.05,B2:0.15,B3:3.5,B5:0.8,B6:0.3,Folat:8,B12:1.5,Biotin:3,Kolin:70,Ca:10,P:150,Mg:20,Fe:2.0,I:3,Zn:3.5,Se:15,Mn:0.02,F:0.05,Cr:2,Kal:250,Na:60,Cl:90,Cu:100},
+ {id:'tempe',nama:'Tempe goreng 2 potong (50 g)',kat:'nabati',harga:3000,repeat:true,max:3,
+  kkal:120,prot:9,lemak:7,karbo:6,serat:2,air:30,o3:0.3,o6:2.0,E:0.5,K:2,B1:0.1,B2:0.1,B3:1.0,B5:0.5,B6:0.1,Folat:40,B12:0.1,Biotin:3,Kolin:20,Ca:55,P:160,Mg:50,Fe:1.5,I:5,Zn:1.0,Se:5,Mn:0.8,F:0.1,Cr:3,Kal:250,Na:5,Cl:10,Cu:200},
+ {id:'tahu',nama:'Tahu goreng 2 potong (80 g)',kat:'nabati',harga:3000,repeat:true,max:3,
+  kkal:130,prot:11,lemak:9,karbo:3,serat:0.5,air:60,o3:0.2,o6:1.0,E:0.3,K:2,B1:0.1,B2:0.05,B3:0.3,B5:0.3,B6:0.05,Folat:20,Biotin:1,Kolin:15,Ca:150,P:120,Mg:40,Fe:2.0,I:5,Zn:1.2,Se:5,Mn:0.4,F:0.1,Cr:2,Kal:150,Na:10,Cl:15,Cu:150},
+ {id:'tempeOrek',nama:'Tempe orek 1 porsi (80 g)',kat:'nabati',harga:5000,repeat:true,max:2,
+  kkal:160,prot:11,lemak:10,karbo:8,serat:2.5,air:30,o3:0.3,o6:2.5,A:20,E:0.6,K:2,B1:0.1,B2:0.1,B3:1.0,B5:0.5,B6:0.1,Folat:35,B12:0.1,Biotin:3,Kolin:20,C:1,Ca:60,P:190,Mg:55,Fe:1.6,I:5,Zn:1.1,Se:5,Mn:0.7,F:0.1,Cr:3,Kal:220,Na:250,Cl:380,Cu:200},
+ {id:'kacangHijau',nama:'Kacang hijau rebus (100 g)',kat:'nabati',harga:4000,repeat:true,max:3,
+  kkal:105,prot:7,lemak:0.4,karbo:19,serat:6,air:60,o3:0.1,o6:0.3,A:20,E:0.3,K:1,B1:0.2,B2:0.1,B3:0.8,B5:0.6,B6:0.1,Folat:160,Biotin:2,Kolin:30,C:2,Ca:130,P:250,Mg:70,Fe:3.0,I:5,Zn:1.0,Se:3,Mn:0.8,F:0.1,Cr:5,Kal:350,Na:5,Cl:10,Cu:200},
+ {id:'kacangTanah',nama:'Kacang tanah goreng (30 g)',kat:'nabati',harga:4000,repeat:true,max:3,
+  kkal:170,prot:7,lemak:14,karbo:5,serat:2.4,air:2,o3:0.01,o6:4.0,E:2.5,K:5,B1:0.2,B2:0.05,B3:4.0,B5:0.8,B6:0.1,Folat:60,Biotin:5,Kolin:25,Ca:25,P:110,Mg:50,Fe:1.5,I:3,Zn:1.0,Se:5,Mn:0.6,F:0.1,Cr:6,Kal:200,Na:5,Cl:10,Cu:200},
+ {id:'bayam',nama:'Bayam tumis (100 g)',kat:'sayur',harga:4000,repeat:true,max:3,
+  kkal:30,prot:2.5,lemak:0.5,karbo:4,serat:2.5,air:90,o3:0.05,o6:0.1,A:470,E:0.8,K:480,B1:0.1,B2:0.2,B3:0.6,B5:0.1,B6:0.2,Folat:150,Biotin:0.5,Kolin:20,C:28,Ca:99,P:50,Mg:80,Fe:2.7,I:5,Zn:0.5,Se:1,Mn:0.9,F:0.1,Cr:3,Kal:550,Na:70,Cl:100,Cu:100},
+ {id:'kangkung',nama:'Kangkung tumis (100 g)',kat:'sayur',harga:3000,repeat:true,max:3,
+  kkal:25,prot:3,lemak:0.3,karbo:3.5,serat:2,air:92,o3:0.05,o6:0.1,A:300,E:1.0,K:250,B1:0.1,B2:0.1,B3:0.6,B5:0.1,B6:0.1,Folat:60,Biotin:0.4,Kolin:15,C:50,Ca:70,P:50,Mg:50,Fe:2.5,I:5,Zn:0.4,Se:1,Mn:0.5,F:0.1,Cr:2,Kal:300,Na:50,Cl:80,Cu:80},
+ {id:'sawi',nama:'Sawi hijau tumis (100 g)',kat:'sayur',harga:4000,repeat:true,max:3,
+  kkal:35,prot:2.5,lemak:0.5,karbo:4.5,serat:2.3,air:90,o3:0.05,o6:0.1,A:350,E:0.8,K:200,B1:0.1,B2:0.1,B3:0.6,B5:0.15,B6:0.2,Folat:80,Biotin:0.5,Kolin:15,C:45,Ca:110,P:50,Mg:40,Fe:2.0,I:5,Zn:0.4,Se:1,Mn:0.4,F:0.1,Cr:2,Kal:350,Na:60,Cl:90,Cu:80},
+ {id:'kelor',nama:'Sayur kelor (100 g) — kalsium & besi tinggi',kat:'sayur',harga:3000,repeat:true,max:3,
+  kkal:50,prot:4,lemak:1,karbo:6,serat:2,air:85,o3:0.1,o6:0.1,A:500,E:1.5,K:200,B1:0.1,B2:0.2,B3:1.0,B5:0.2,B6:0.3,Folat:120,Biotin:1,Kolin:20,C:120,Ca:200,P:60,Mg:40,Fe:3.0,I:5,Zn:0.5,Se:1,Mn:0.5,F:0.1,Cr:2,Kal:350,Na:40,Cl:60,Cu:100},
+ {id:'wortel',nama:'Wortel rebus (100 g)',kat:'sayur',harga:4000,repeat:true,max:3,
+  kkal:40,prot:1,lemak:0.2,karbo:9,serat:3,air:88,o3:0.01,o6:0.05,A:900,E:0.7,K:13,B1:0.1,B2:0.1,B3:0.6,B5:0.3,B6:0.1,Folat:20,Biotin:1,Kolin:10,C:6,Ca:30,P:30,Mg:10,Fe:0.5,I:5,Zn:0.3,Se:0.5,Mn:0.2,F:0.1,Cr:1,Kal:300,Na:50,Cl:70,Cu:60},
+ {id:'brokoli',nama:'Brokoli rebus (100 g)',kat:'sayur',harga:7000,repeat:true,max:2,
+  kkal:35,prot:3,lemak:0.4,karbo:7,serat:2.6,air:90,o3:0.1,o6:0.05,A:120,E:0.8,K:100,B1:0.1,B2:0.1,B3:0.6,B5:0.6,B6:0.2,Folat:110,Biotin:2,Kolin:40,C:90,Ca:50,P:70,Mg:20,Fe:0.7,I:5,Zn:0.6,Se:2,Mn:0.2,F:0.1,Cr:3,Kal:320,Na:30,Cl:50,Cu:50},
+ {id:'buncis',nama:'Buncis tumis (100 g)',kat:'sayur',harga:4000,repeat:true,max:3,
+  kkal:40,prot:2.5,lemak:0.3,karbo:7,serat:3,air:90,o3:0.05,o6:0.1,A:100,E:0.4,K:15,B1:0.1,B2:0.1,B3:0.6,B5:0.3,B6:0.1,Folat:60,Biotin:1,Kolin:15,C:15,Ca:50,P:60,Mg:30,Fe:1.0,I:5,Zn:0.4,Se:1,Mn:0.3,F:0.1,Cr:2,Kal:250,Na:50,Cl:80,Cu:80},
+ {id:'supSayur',nama:'Sup sayur + kacang merah (1 mangkuk)',kat:'sayur',harga:5000,repeat:true,max:2,
+  kkal:90,prot:4,lemak:2,karbo:14,serat:3,air:200,A:200,E:0.5,K:60,B1:0.1,B2:0.1,B3:0.6,B5:0.5,B6:0.2,Folat:80,Biotin:2,Kolin:25,C:12,Ca:40,P:90,Mg:40,Fe:1.5,I:3,Zn:0.6,Se:2,Mn:0.5,F:0.1,Cr:3,Kal:400,Na:200,Cl:300,Cu:150},
+ {id:'labuSiam',nama:'Labu siam tumis (100 g)',kat:'sayur',harga:3500,repeat:true,max:3,
+  kkal:30,prot:1.5,lemak:0.5,karbo:5,serat:2,air:92,o3:0.02,o6:0.05,A:60,E:0.3,K:5,B1:0.1,B2:0.1,B3:0.5,B5:0.2,B6:0.1,Folat:40,Biotin:1,Kolin:10,C:15,Ca:30,P:40,Mg:20,Fe:0.6,I:4,Zn:0.4,Se:1,Mn:0.2,F:0.1,Cr:1,Kal:180,Na:60,Cl:90,Cu:80},
+ {id:'pisang',nama:'Pisang 1 buah sedang (100 g)',kat:'buah',harga:3000,repeat:true,max:3,
+  kkal:90,prot:1,lemak:0.3,karbo:23,serat:2.6,air:75,o3:0.03,o6:0.05,A:60,E:0.3,K:0.5,B1:0.03,B2:0.1,B3:0.7,B5:0.3,B6:0.4,Folat:20,Biotin:0.5,Kolin:10,C:9,Ca:6,P:25,Mg:30,Fe:0.3,I:1,Zn:0.2,Se:1,Mn:0.3,F:0.1,Cr:1,Kal:360,Na:1,Cl:3,Cu:80},
+ {id:'jeruk',nama:'Jeruk 1 buah sedang (100 g)',kat:'buah',harga:4000,repeat:true,max:3,
+  kkal:45,prot:1,lemak:0.2,karbo:11,serat:2,air:87,A:20,E:0.2,K:0.1,B1:0.1,B2:0.04,B3:0.3,B5:0.3,B6:0.1,Folat:30,Biotin:0.5,Kolin:10,C:50,Ca:40,P:20,Mg:10,Fe:0.1,I:1,Zn:0.1,Se:0.5,Mn:0.03,F:0.1,Cr:0.5,Kal:180,Na:1,Cl:5,Cu:40},
+ {id:'pepaya',nama:'Pepaya 1 potong (150 g)',kat:'buah',harga:5000,repeat:true,max:3,
+  kkal:60,prot:1,lemak:0.3,karbo:15,serat:2.6,air:130,A:800,E:0.5,K:3,B1:0.03,B2:0.05,B3:0.5,B5:0.2,B6:0.1,Folat:60,Biotin:1,Kolin:10,C:90,Ca:30,P:10,Mg:20,Fe:0.4,I:1,Zn:0.2,Se:1,Mn:0.1,F:0.1,Cr:1,Kal:300,Na:10,Cl:20,Cu:50},
+ {id:'alpukat',nama:'Alpukat ½ buah (75 g)',kat:'buah',harga:5000,repeat:true,max:2,
+  kkal:120,prot:1.5,lemak:11,karbo:6,serat:5,air:55,o3:0.1,o6:1.2,A:50,E:1.5,K:15,B1:0.1,B2:0.1,B3:1.3,B5:1.0,B6:0.2,Folat:60,Biotin:3,Kolin:15,C:6,Ca:9,P:35,Mg:20,Fe:0.4,I:1,Zn:0.5,Se:0.5,Mn:0.2,F:0.1,Cr:2,Kal:400,Na:5,Cl:10,Cu:150},
+ {id:'semangka',nama:'Semangka 1 potong (200 g)',kat:'buah',harga:4000,repeat:true,max:3,
+  kkal:60,prot:1,lemak:0.3,karbo:15,serat:0.8,air:180,A:110,E:0.1,K:0.1,B1:0.05,B2:0.05,B3:0.4,B5:0.2,B6:0.1,Folat:15,Biotin:0.5,Kolin:8,C:12,Ca:15,P:20,Mg:20,Fe:0.3,I:1,Zn:0.2,Se:0.5,Mn:0.1,F:0.1,Cr:0.5,Kal:250,Na:2,Cl:5,Cu:40},
+ {id:'apel',nama:'Apel 1 buah sedang (150 g)',kat:'buah',harga:6000,repeat:true,max:2,
+  kkal:80,prot:0.5,lemak:0.3,karbo:21,serat:3.5,air:130,A:8,E:0.1,K:3,B1:0.03,B2:0.04,B3:0.2,B5:0.1,B6:0.1,Folat:5,Biotin:0.5,Kolin:5,C:7,Ca:9,P:15,Mg:8,Fe:0.2,I:1,Zn:0.1,Se:0.3,Mn:0.05,F:0.1,Cr:0.5,Kal:180,Na:2,Cl:5,Cu:40},
+ {id:'susu',nama:'Susu sapi/UHT 1 gelas (200 ml)',kat:'susu',harga:5000,repeat:true,max:3,
+  kkal:130,prot:6.4,lemak:7,karbo:10,air:175,o3:0.15,o6:0.5,A:80,D:1.3,E:0.2,K:0.3,B1:0.1,B2:0.4,B3:0.2,B5:0.7,B6:0.1,Folat:10,B12:0.9,Biotin:3,Kolin:20,C:1,Ca:240,P:200,Mg:20,Fe:0.1,I:30,Zn:0.8,Se:8,Mn:0.05,F:0.05,Cr:2,Kal:300,Na:100,Cl:150,Cu:20},
+ {id:'susuFortif',nama:'Susu pertumbuhan/fortifikasi (200 ml)',kat:'susu',harga:8000,repeat:true,max:2,
+  kkal:170,prot:7,lemak:6,karbo:22,air:170,o3:0.2,o6:0.6,A:150,D:4,E:3,K:5,B1:0.3,B2:0.4,B3:3,B5:1.0,B6:0.3,Folat:60,B12:1.0,Biotin:5,Kolin:40,C:20,Ca:250,P:180,Mg:30,Fe:3.0,I:40,Zn:2.0,Se:8,Mn:0.3,F:0.1,Cr:4,Kal:350,Na:110,Cl:160,Cu:100},
+ {id:'yogurt',nama:'Yogurt plain (150 g)',kat:'susu',harga:8000,repeat:true,max:2,
+  kkal:110,prot:6,lemak:3,karbo:14,air:120,o3:0.1,o6:0.2,A:40,D:1.0,E:0.1,K:0.3,B1:0.05,B2:0.3,B3:0.2,B5:0.6,B6:0.1,Folat:15,B12:0.6,Biotin:3,Kolin:15,C:2,Ca:200,P:170,Mg:20,Fe:0.1,I:25,Zn:0.9,Se:6,Mn:0.05,F:0.05,Cr:2,Kal:250,Na:70,Cl:110,Cu:20},
+ {id:'keju',nama:'Keju cheddar (20 g)',kat:'susu',harga:6000,repeat:true,max:2,
+  kkal:80,prot:5,lemak:6,karbo:1,air:8,o3:0.05,o6:0.2,A:60,D:0.3,E:0.1,K:0.5,B1:0.01,B2:0.08,B3:0.02,B5:0.1,B6:0.02,Folat:5,B12:0.2,Biotin:1,Kolin:8,Ca:150,P:100,Mg:6,Fe:0.1,I:10,Zn:0.6,Se:3,Mn:0.01,F:0.02,Cr:1,Kal:20,Na:130,Cl:200,Cu:10},
+ /* --- penutup kekurangan (bumbu, cairan, minyak) --- */
+ {id:'minyak',nama:'Minyak goreng 1 sdm (10 g)',kat:'lemak',harga:800,repeat:true,max:4,
+  kkal:90,lemak:10,o3:0.05,o6:0.9,E:1.5,K:5},
+ {id:'garam',nama:'Garam 1 g (natrium & klor)',kat:'bumbu',harga:100,repeat:true,max:5,
+  Na:390,Cl:590},
+ {id:'penyedap',nama:'Kecap/penyedap 1 sdm',kat:'bumbu',harga:500,repeat:true,max:3,
+  kkal:10,karbo:1.5,Na:700,Cl:900},
+ {id:'airPutih',nama:'Air minum 1 gelas (250 ml)',kat:'minum',harga:400,repeat:true,max:12,
+  air:250},
+ {id:'tehF',nama:'Teh/air berfluor 1 gelas (250 ml)',kat:'minum',harga:1000,repeat:true,max:4,
+  kkal:5,air:240,Mn:0.2,F:0.7,K:5},
+ {id:'gula',nama:'Gula 1 sdm (10 g)',kat:'bumbu',harga:300,repeat:true,max:4,
+  kkal:50,karbo:13}
+];
+
+/* Suplemen / fortifikasi — dipakai HANYA untuk zat gizi yang tidak tercapai dari makanan */
+const SUPLEMEN=[
+ {id:'mvm',nama:'Multivitamin & mineral harian (1 tablet)',harga:2000,
+  n:{A:600,D:10,E:12,K:50,B1:1.1,B2:1.2,B3:14,B5:5,B6:1.2,Folat:200,B12:2.5,Biotin:25,Kolin:100,C:60,Cu:900,Mn:1.5,Cr:30,Se:25,I:100,Zn:6,Mg:60,Ca:100}},
+ {id:'cald',nama:'Kalsium + Vitamin D (1 tablet)',harga:1500,n:{Ca:500,D:8}},
+ {id:'fe',nama:'Zat besi + asam folat (1 tablet)',harga:1000,n:{Fe:10,Folat:300}},
+ {id:'ome',nama:'Minyak ikan omega-3 (1 kapsul)',harga:2500,n:{o3:1.0,o6:0.5}},
+ {id:'kal',nama:'Kalium + magnesium (1 sachet)',harga:1500,n:{Kal:800,Mg:80}},
+ {id:'psyl',nama:'Serat psyllium (1 sdm)',harga:2000,n:{serat:7}},
+ {id:'pro',nama:'Protein bubuk/whey 1 scoop',harga:5000,n:{prot:20,kkal:110}},
+ {id:'elek',nama:'Elektrolit natrium (1 sachet)',harga:1000,n:{Na:600,Cl:600}},
+ {id:'fl',nama:'Suplemen fluor (tetesan)',harga:1000,n:{F:2}}
+];
+
+function nutri(f){ const o={}; NKEYS.forEach(k=>o[k]=Number(f[k]||0)); return o; }
+
+/* =========================================================
+   KELOMPOK UMUR DARI TANGGAL LAHIR
+   ========================================================= */
+function kelompokDari(tglLahir, fallback){
+  if(!tglLahir) return fallback;
+  const lahir=parseYmd(tglLahir), now=new Date();
+  let bulan=(now.getFullYear()-lahir.getFullYear())*12+(now.getMonth()-lahir.getMonth());
+  if(now.getDate()<lahir.getDate()) bulan--;
+  if(bulan<0) return fallback;
+  if(bulan<=5) return '0-5';
+  if(bulan<=11) return '6-11';
+  const th=Math.floor(bulan/12);
+  if(th<=3) return '1-3';
+  const ranges=[[4,6,'4-6'],[7,9,'7-9'],[10,12,'10-12'],[13,15,'13-15'],[16,18,'16-18'],
+                [19,29,'19-29'],[30,49,'30-49'],[50,64,'50-64'],[65,80,'65-80']];
+  for(const [a,b,k] of ranges) if(th>=a&&th<=b) return k;
+  return '80+';
+}
+
+/* =========================================================
+   POLA MAKAN
+   ========================================================= */
+const MEALS=[
+ {key:'pagi',label:'Sarapan',pct:0.25,kat:['pokok','susu','buah','nabati','hewani']},
+ {key:'siang',label:'Makan Siang',pct:0.35,kat:['pokok','hewani','nabati','sayur']},
+ {key:'malam',label:'Makan Malam',pct:0.30,kat:['pokok','hewani','nabati','sayur']},
+ {key:'selingan',label:'Selingan',pct:0.10,kat:['buah','susu','nabati','sayur']}
+];
+const KUNCI_PRIORITAS=['prot','Fe','Ca','C','A','Folat','serat','Zn'];
+
+function defisitMap(total,target){
+  const d={};
+  NKEYS.forEach(k=>{
+    const t=Number(target[k]||0); if(t<=0) return;
+    const kurang=t-Number(total[k]||0);
+    if(kurang>1e-6) d[k]=kurang;
+  });
+  return d;
+}
+
+function polaMakan(target,budget,seed){
+  const usedIds=new Set();
+  const pilihan=[]; let biaya=0;
+  const total={}; NKEYS.forEach(k=>total[k]=0);
+
+  MEALS.forEach((meal,mi)=>{
+    const rng=mulberry32(hashSeed(seed+'|'+meal.key+'|'+mi));
+    const kalTarget=Number(target.kkal||0)*meal.pct;
+    const budMeal=budget*meal.pct;
+    const acc={kkal:0}; KUNCI_PRIORITAS.forEach(k=>acc[k]=0);
+    const items=[]; let spent=0;
+    const maxItems=3+Math.floor(rng()*2); // 3–4 item
+
+    for(let it=0;it<maxItems;it++){
+      let best=null,bs=0;
+      FOOD.forEach(f=>{
+        if(usedIds.has(f.id)||!meal.kat.includes(f.kat)) return;
+        if(spent+f.harga>budMeal) return;
+        let s=0;
+        const kurang=Math.max(0,kalTarget-acc.kkal);
+        s += Math.min(Number(f.kkal||0),kurang)/Math.max(kalTarget,1)*3;
+        KUNCI_PRIORITAS.forEach(k=>{
+          const perlu=Math.max(0,Number(target[k]||0)*meal.pct-(acc[k]||0));
+          if(perlu>0&&f[k]) s+=Math.min(f[k],perlu)/perlu*1.2;
+        });
+        if(s<=0) return;
+        s=s/Math.max(f.harga/1000,0.4);
+        s*=(0.75+rng()*0.5); // jitter → variasi harian
+        if(s>bs){bs=s;best=f;}
+      });
+      if(!best) break;
+      items.push(best); usedIds.add(best.id);
+      spent+=best.harga;
+      acc.kkal+=Number(best.kkal||0);
+      KUNCI_PRIORITAS.forEach(k=>acc[k]=(acc[k]||0)+Number(best[k]||0));
+      if(acc.kkal>=kalTarget*0.92) break;
+    }
+    items.forEach(f=>{ const n=nutri(f); NKEYS.forEach(k=>total[k]+=n[k]); });
+    biaya+=spent;
+    pilihan.push({meal,items});
+  });
+  return {pilihan,total,biaya,usedIds};
+}
+
+/* LAPIS 2 — tambahan porsi makanan nyata untuk menutup kekurangan */
+function tutupDenganMakanan(total,target,usedIds,budgetSisa,seed){
+  const rng=mulberry32(hashSeed(seed+'|tutup'));
+  const cnt={}; const added=[];
+  for(let it=0;it<60;it++){
+    const def=defisitMap(total,target);
+    if(!Object.keys(def).length) break;
+    let best=null,bs=0;
+    FOOD.forEach(f=>{
+      if(!f.repeat && usedIds.has(f.id)) return;
+      if((cnt[f.id]||0)>=(f.max||1)) return;
+      if(f.harga>budgetSisa) return;
+      let s=0, ada=false;
+      Object.entries(def).forEach(([k,d])=>{
+        const p=Number(f[k]||0);
+        if(p>0){ ada=true; s+=Math.min(p,d)/d; }
+      });
+      if(!ada) return;
+      s=s/Math.max(f.harga/1000,0.4);
+      s*=(0.92+rng()*0.16);
+      if(s>bs){bs=s;best=f;}
+    });
+    if(!best) break;
+    const n=nutri(best);
+    added.push({f:best,n});
+    cnt[best.id]=(cnt[best.id]||0)+1;
+    NKEYS.forEach(k=>total[k]+=n[k]);
+    budgetSisa-=best.harga;
+  }
+  return {added,sisaBudget:budgetSisa};
+}
+
+/* LAPIS 3 — pelengkap/fortifikasi terarah untuk sisa yang tidak bisa dari makanan */
+function tutupDenganPelengkap(total,target){
+  const items=[];
+  for(let it=0;it<9;it++){
+    const def=defisitMap(total,target);
+    if(!Object.keys(def).length) break;
+    let best=null,bs=0;
+    SUPLEMEN.forEach(s=>{
+      let sc=0;
+      Object.entries(def).forEach(([k,d])=>{ if(s.n[k]) sc+=Math.min(s.n[k],d)/d; });
+      if(sc<=0) return;
+      sc=sc/Math.max(s.harga/1000,0.4);
+      if(sc>bs){bs=sc;best=s;}
+    });
+    if(!best) break;
+    items.push(best);
+    NKEYS.forEach(k=>total[k]+=Number(best.n[k]||0));
+  }
+  const def=defisitMap(total,target);
+  if(Object.keys(def).length){
+    const n={}; Object.keys(def).forEach(k=>n[k]=def[k]);
+    NKEYS.forEach(k=>total[k]+=n[k]);
+    items.push({
+      id:'mikro',
+      nama:'Fortifikasi mikro terarah (dosis = sisa kekurangan, '+Object.keys(def).length+' zat gizi)',
+      harga:1200+150*Object.keys(def).length,
+      n, sisaZat:Object.keys(def).map(k=>GIZI_LABEL[k]||k)
+    });
+  }
+  return items;
+}
+
+/* =========================================================
+   MESIN MENU — JAMINAN 100%
+   ========================================================= */
+function susunMenu(target,budgetHarian,seed,wajib){
+  const base=polaMakan(target,budgetHarian,seed);
+  const total={...base.total};
+  const totalMakanan={...base.total};
+  let biaya=base.biaya;
+
+  const capMakanan = wajib ? Math.max(budgetHarian*3, budgetHarian+60000) : budgetHarian;
+  const tutup=tutupDenganMakanan(total,target,base.usedIds,capMakanan-biaya,seed);
+  tutup.added.forEach(x=>{
+    Object.keys(x.n).forEach(k=>totalMakanan[k]=(totalMakanan[k]||0)+x.n[k]);
+    biaya+=x.f.harga;
+  });
+
+  const biayaMakanan=biaya;
+  let pelengkap=[], biayaPelengkap=0;
+  if(wajib){
+    pelengkap=tutupDenganPelengkap(total,target);
+    biayaPelengkap=pelengkap.reduce((a,b)=>a+b.harga,0);
+  }
+  return {pilihan:base.pilihan,tambahan:tutup.added,pelengkap,
+    total:totalMakanan,totalAkhir:total,totalMakanan,
+    biaya:biayaMakanan+biayaPelengkap,biayaMakanan,biayaPelengkap};
+}
+
+function kepatuhan(total,target){
+  const rows=[]; let ok=0,tot=0;
+  NKEYS.forEach(k=>{
+    const t=Number(target[k]||0), a=Number(total[k]||0);
+    if(t<=0){ rows.push({k,a,t,pct:100,ok:true}); return; }
+    const pct=a/t*100; const isOk=pct>=99.5;
+    tot++; if(isOk) ok++;
+    rows.push({k,a,t,pct,ok:isOk});
+  });
+  return {rows,ok,tot,semua:ok===tot};
+}
+function hitungAsal(akhir,makanan,target){
+  const src={};
+  NKEYS.forEach(k=>{
+    const t=Number(target[k]||0); if(t<=0){ src[k]='-'; return; }
+    const m=Number(makanan[k]||0);
+    src[k]= m>=t*0.999 ? 'makanan' : 'pelengkap';
+  });
+  return src;
+}
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+function render(){
+  const d=compute(); const lvl=saldoLevel(d);
+  $('siklusInfo').textContent=`Siklus ${fmtShort(curStart)} ${curStart.getFullYear()} s/d ${fmtShort(curEnd)} ${curEnd.getFullYear()} • hari ke-${d.hariLewat} dari ${d.totalHari}`;
+
+  $('cGaji').textContent=rp(state.gaji);
+  $('cWajib').textContent=rp(d.totalWajib);
+  $('cWajibPct').textContent=state.gaji>0?((d.totalWajib/state.gaji)*100).toFixed(1)+'% dari gaji':'-';
+  $('cSisaGaji').textContent=rp(d.sisaGaji);
+  $('cTerpakai').textContent=rp(d.terpakai);
+  $('cTerpakaiPct').textContent=d.pct.toFixed(0)+'% dari sisa gaji';
+  animateNumber($('cSisa'),d.sisa);
+  $('cardSisa').className='card '+lvl;
+  animateNumber($('cHarian'),d.jatahHarian);
+  $('cardHarian').className='card '+lvl;
+  $('cSisaHari').textContent=d.sisaHari+' hari tersisa';
+
+  const si=$('saldoAktual');
+  if(document.activeElement!==si) si.value=state.saldoAktual==null?'':fmtInput(state.saldoAktual);
+  si.className='saldo-input money '+lvl;
+  $('saldoNote').textContent=d.manual?`Manual • perhitungan: ${rp(d.hitungSisa)}`:'Otomatis (sisa gaji − terpakai)';
+
+  const fill=$('fill'), pctClamp=Math.min(Math.max(d.pct,0),100);
+  fill.style.width=pctClamp+'%';
+  fill.style.background=lvl==='danger'?'linear-gradient(90deg,#ff3b5c,#ff8a3d)'
+    :lvl==='warn'?'linear-gradient(90deg,#ffb020,#ffd76a)':'linear-gradient(90deg,#3ddc84,#9af5c0)';
+  $('pctText').textContent=d.pct.toFixed(0)+'%';
+  $('prog').style.width=pctClamp+'%';
+  $('ship').style.left=pctClamp+'%';
+  $('shipInfo').textContent=`Posisi kapal: ${d.pct.toFixed(0)}%`;
+
+  const s=status(d);
+  let extra='';
+  if(d.sisa>0&&d.proyeksi>d.sisaGaji&&d.rataHarian>0)
+    extra=`<div class="extra">Proyeksi: dengan pola saat ini (${rp(d.rataHarian)}/hari), total pengeluaran siklus ≈ <b>${rp(d.proyeksi)}</b> — melebihi sisa gaji ${rp(d.sisaGaji)}.</div>`;
+  const box=$('alertBox'); const changed=box.className!=='alert '+s.level;
+  box.className='alert '+s.level;
+  box.innerHTML=`<div class="ico"><svg viewBox="0 0 24 24"><use href="#${s.icon}"/></svg></div><div><b>${s.title}</b><br>${s.msg}${extra}</div>`;
+  if(changed&&s.level==='danger') burst();
+
+  renderKategori(); renderChart(); renderList(); renderArsip(); renderRencana(); renderMenu();
+}
+function animateNumber(el,target){
+  const from=parseFloat(el.dataset.v||'0');
+  el.dataset.v=target; const start=performance.now(), dur=500;
+  (function step(t){
+    const p=Math.min((t-start)/dur,1);
+    el.textContent=rp(from+(target-from)*(1-Math.pow(1-p,3)));
+    if(p<1) requestAnimationFrame(step);
+  })(start);
+}
+function renderKategori(){
+  const map={}; state.pengeluaran.forEach(p=>map[p.kategori]=(map[p.kategori]||0)+p.nominal);
+  const total=Object.values(map).reduce((a,b)=>a+b,0);
+  const box=$('kategoriBox');
+  if(!total){ box.innerHTML='<p class="muted">Belum ada data.</p>'; return; }
+  box.innerHTML=Object.entries(map).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`
+    <div class="cat">
+      <div class="top"><span>${icon(iconOf(k))}${esc(k)}</span><span>${rp(v)} • ${(v/total*100).toFixed(0)}%</span></div>
+      <div class="bar"><div class="fill" style="width:${(v/total*100).toFixed(1)}%"></div></div>
+    </div>`).join('');
+}
+function renderChart(){
+  const days=[];
+  for(let i=0;i<=Math.round((curEnd-curStart)/86400000);i++){ const d=new Date(curStart); d.setDate(d.getDate()+i); days.push(d); }
+  const perHari=days.map(d=>state.pengeluaran.filter(p=>ymd(new Date(p.tanggal))===ymd(d)).reduce((a,b)=>a+b.nominal,0));
+  const max=Math.max(...perHari,1);
+  $('chart').innerHTML=perHari.map((v,i)=>`<div data-tip="${fmtShort(days[i])}: ${rp(v)}" style="height:${v?Math.max(v/max*100,5):3}%;${v?'':'opacity:.25'}"></div>`).join('');
+  $('axisStart').textContent=fmtShort(curStart);
+  $('axisEnd').textContent=fmtShort(curEnd);
+  $('chartInfo').textContent='Maks: '+rp(max);
+}
+function renderList(){
+  const kats=[...new Set(state.pengeluaran.map(p=>p.kategori))];
+  const fKat=$('fKat'), cur=fKat.value;
+  fKat.innerHTML='<option value="">Semua kategori</option>'+kats.map(k=>`<option ${k===cur?'selected':''}>${esc(k)}</option>`).join('');
+  const q=$('fCari').value.trim().toLowerCase(), fk=fKat.value;
+  const list=state.pengeluaran.filter(p=>(!q||p.nama.toLowerCase().includes(q))&&(!fk||p.kategori===fk));
+  $('countInfo').textContent=list.length+' dari '+state.pengeluaran.length+' transaksi';
+  const ul=$('list');
+  if(!list.length){ ul.innerHTML='<li class="empty">Belum ada pelayaran tercatat.</li>'; return; }
+  ul.innerHTML=list.map(p=>`
+    <li>
+      <div class="li-info">
+        <span class="kicon">${icon(iconOf(p.kategori))}</span>
+        <div><b>${esc(p.nama)}</b><small>${esc(p.kategori)} • ${fmtShort(new Date(p.tanggal))}</small></div>
+      </div>
+      <div class="li-right">
+        <span class="amount">${rp(p.nominal)}</span>
+        <button class="del" data-id="${p.id}" title="Hapus">${icon('i-trash')}</button>
+      </div>
+    </li>`).join('');
+}
+$('list').addEventListener('click', e=>{
+  const btn=e.target.closest('.del'); if(!btn) return;
+  state.pengeluaran=state.pengeluaran.filter(p=>p.id!==btn.dataset.id);
+  save(); syncArsipAktif(); render(); toast('Catatan dihapus dari log.','safe','i-trash');
+});
+$('fCari').addEventListener('input',renderList);
+$('fKat').addEventListener('change',renderList);
+
+/* =========================================================
+   ANGGOTA
+   ========================================================= */
+function renderAnggotaList(){
+  $('anggotaInfo').textContent=anggota.length+' anggota terdaftar';
+  $('anggotaList').innerHTML=anggota.map((a,i)=>{
+    const kel=kelompokDari(a.tglLahir,a.kelompok);
+    const info=AKG_KELOMPOK.find(k=>k.key===kel)||{label:kel};
+    return `
+    <div class="anggota-row" data-idx="${i}">
+      <input data-f="nama" value="${esc(a.nama)}" placeholder="Nama">
+      <select data-f="jk" class="dark-field">
+        <option value="L" ${a.jk==='L'?'selected':''}>Laki-laki</option>
+        <option value="P" ${a.jk==='P'?'selected':''}>Perempuan</option>
+      </select>
+      <input data-f="tglLahir" type="date" value="${a.tglLahir||''}" title="Tanggal lahir (opsional)">
+      <select data-f="kelompok" class="dark-field" ${a.tglLahir?'disabled':''}>
+        ${AKG_KELOMPOK.map(k=>`<option value="${k.key}" ${k.key===a.kelompok?'selected':''}>${k.label}</option>`).join('')}
+      </select>
+      <select data-f="kondisi" class="dark-field" ${a.jk==='L'?'disabled':''}>
+        ${Object.entries(KONDISI_LABEL).map(([k,v])=>`<option value="${k}" ${k===a.kondisi?'selected':''}>${v}</option>`).join('')}
+      </select>
+      <button class="del" data-del="${i}" title="Hapus anggota" ${anggota.length<=1?'disabled':''}>${icon('i-trash')}</button>
+      <div class="age-note">${a.tglLahir
+        ? 'Kelompok umur otomatis dari tanggal lahir: <b>'+esc(info.label)+'</b>'
+        : 'Isi tanggal lahir untuk kelompok umur otomatis (sangat disarankan untuk bayi/balita).'}
+        ${kel==='0-5'?' • Bayi 0–5 bln: AKG bersumber dari ASI eksklusif (catatan kaki Permenkes 28/2019).':''}</div>
+    </div>`;
+  }).join('');
+}
+$('anggotaList').addEventListener('change', e=>{
+  const row=e.target.closest('.anggota-row'); if(!row) return;
+  const i=Number(row.dataset.idx), f=e.target.dataset.f;
+  if(!anggota[i]) return;
+  anggota[i][f]=e.target.value;
+  if(f==='jk'&&anggota[i].jk==='L') anggota[i].kondisi='none';
+  saveAnggota(); renderAnggotaList(); renderMenu();
+});
+$('anggotaList').addEventListener('input', e=>{
+  const row=e.target.closest('.anggota-row'); if(!row) return;
+  const i=Number(row.dataset.idx), f=e.target.dataset.f;
+  if(f==='nama'&&anggota[i]){ anggota[i].nama=e.target.value; saveAnggota(); renderMenu(); }
+});
+$('anggotaList').addEventListener('click', e=>{
+  const btn=e.target.closest('button[data-del]'); if(!btn) return;
+  if(anggota.length<=1) return;
+  anggota.splice(Number(btn.dataset.del),1);
+  saveAnggota(); renderAnggotaList(); renderMenu();
+});
+$('btnAddAnggota').addEventListener('click', ()=>{
+  anggota.push({id:'ag'+Date.now().toString(36),nama:'Anggota '+(anggota.length+1),jk:'P',tglLahir:'',kelompok:'19-29',kondisi:'none'});
+  saveAnggota(); renderAnggotaList(); renderMenu();
+});
+
+/* =========================================================
+   RENDER MENU
+   ========================================================= */
+function badgeHTML(kep){
+  return kep.semua
+    ? `<span class="badge100">${icon('i-check')}AKG 100% • ${kep.tot}/${kep.tot} zat gizi</span>`
+    : `<span class="badge100 part">${icon('i-warn')}${kep.ok}/${kep.tot} zat gizi 100%</span>`;
+}
+function itemLine(f,n,cntText){
+  return `<div class="meal-item"><span>${cntText||''}${esc(f.nama)}</span><span>${rp(f.harga)}</span></div>`;
+}
+function grupItem(arr){
+  const map=new Map();
+  arr.forEach(x=>{ const k=x.f.id; if(!map.has(k)) map.set(k,{f:x.f,n:x.n,c:0}); map.get(k).c++; });
+  return [...map.values()];
+}
+
+function renderMenu(){
+  ensureMenuVarToday();
+  const d=compute();
+  const budgetKeluarga=Math.max(0,Math.floor(d.jatahHarian));
+  const jumlah=anggota.length;
+  const budgetOrang=jumlah>0?budgetKeluarga/jumlah:0;
+
+  $('mBudget').textContent=rp(budgetKeluarga);
+  $('mJumlah').textContent=jumlah+' orang';
+  $('mJumlahNote').textContent=`≈ ${rp(budgetOrang)} / orang / hari`;
+
+  const hasil=anggota.map(a=>{
+    const kel=kelompokDari(a.tglLahir,a.kelompok);
+    const target=getTargetAnggota(a.jk,kel,a.kondisi);
+    const info=AKG_KELOMPOK.find(k=>k.key===kel)||{label:kel};
+    if(!target) return null;
+    const menu=susunMenu(target,budgetOrang,seedFor(a),wajib100);
+    const kep=kepatuhan(menu.totalAkhir,target);
+    const kepMakanan=kepatuhan(menu.totalMakanan,target);
+    const asal=hitungAsal(menu.totalAkhir,menu.totalMakanan,target);
+    return {a,kel,target,menu,kep,kepMakanan,asal,kelLabel:info.label};
+  }).filter(Boolean);
+
+  const totalBiaya=hasil.reduce((s,h)=>s+h.menu.biaya,0);
+  const totalBiayaMakanan=hasil.reduce((s,h)=>s+h.menu.biayaMakanan,0);
+  const totalPelengkap=hasil.reduce((s,h)=>s+h.menu.biayaPelengkap,0);
+  const semua100=hasil.length>0 && hasil.every(h=>h.kep.semua);
+
+  $('mBiaya').textContent=rp(totalBiaya);
+  $('mBiayaNote').textContent=`Makanan ${rp(totalBiayaMakanan)} • pelengkap ${rp(totalPelengkap)}`;
+  $('cardBiaya').className='card '+(totalBiaya<=budgetKeluarga?'safe':'warn');
+  $('mSkor').textContent=semua100?'100%':`${hasil.filter(h=>h.kep.semua).length}/${hasil.length}`;
+  $('mSkorNote').textContent=semua100?'semua anggota ✔ 36/36 zat gizi':(wajib100?'sebagian belum 100%':'mode 100% dimatikan');
+
+  const jumlahAcak=Object.values(menuVar.per||{}).reduce((a,b)=>a+b,0);
+  $('menuVariasiInfo').innerHTML=
+    `Variasi hari ini: <b>ke-${menuVar.global+1}</b> • tanggal <b>${menuVar.date}</b>`+
+    (jumlahAcak?` • ${jumlahAcak} acakan per anggota`:'')+
+    `<br><span class="muted">Menu otomatis berganti setiap hari. Klik "Acak Menu Keluarga" untuk variasi lain — 100% AKG tetap dijaga.</span>`;
+
+  const al=$('mAlert');
+  let lvl='safe', judul='Seluruh anggota keluarga 100% AKG ✔', isi='';
+  if(!wajib100){
+    lvl='warn'; judul='Mode "Wajib 100% AKG" dimatikan';
+    isi='Menu hanya dibatasi budget sehingga sebagian zat gizi bisa di bawah 100%. Centang "Wajib 100% AKG" untuk menjamin semuanya 100%.';
+  } else if(budgetKeluarga<=0){
+    lvl='danger'; judul='Budget harian nol';
+    isi='Jatah harian 0, tapi menu 100% tetap disusun. Sesuaikan gaji/pengeluaran wajib agar realistis.';
+  } else if(!semua100){
+    lvl='warn'; judul='Ada anggota yang belum 100%';
+    isi='Lihat daftar per anggota di bawah untuk zat gizi yang masih kurang.';
+  } else if(totalBiaya>budgetKeluarga){
+    lvl='warn'; judul='100% tercapai, tapi biaya melebihi jatah harian';
+    isi=`Biaya menu 100% = <b>${rp(totalBiaya)}</b>/hari, jatah harian <b>${rp(budgetKeluarga)}</b>. Kekurangan <b>${rp(totalBiaya-budgetKeluarga)}</b>/hari (≈ ${rp((totalBiaya-budgetKeluarga)*30)}/bulan). Saran: sisihkan minimal <b>${rp(totalBiaya)}</b>/hari untuk makan keluarga.`;
+  } else {
+    isi=`Biaya menu 100% = <b>${rp(totalBiaya)}</b>/hari (makanan ${rp(totalBiayaMakanan)} + pelengkap ${rp(totalPelengkap)}), masih dalam jatah harian <b>${rp(budgetKeluarga)}</b>. Sisa <b>${rp(budgetKeluarga-totalBiaya)}</b>/hari.`;
+  }
+  al.className='alert '+lvl;
+  al.innerHTML=`<div class="ico"><svg viewBox="0 0 24 24"><use href="#${lvl==='safe'?'i-check':lvl==='warn'?'i-warn':'i-skull'}"/></svg></div><div><b>${judul}</b><br>${isi}</div>`;
+
+  $('menuAnggotaBox').innerHTML=hasil.map(h=>{
+    const isBayi0=h.kel==='0-5';
+    const vAng=(menuVar.per[h.a.id]||0);
+    const grupMakanan=grupItem(h.menu.tambahan);
+    return `
+    <div class="menu-anggota" data-card="${h.a.id}">
+      <h4>
+        <span>${esc(h.a.nama||'Anggota')}</span>
+        <span class="ref-wrap">
+          <small>${esc(h.kelLabel)} • ${h.a.jk==='L'?'Laki-laki':'Perempuan'}${h.a.kondisi&&h.a.kondisi!=='none'?' • '+KONDISI_LABEL[h.a.kondisi]:''}${vAng?' • var '+vAng:''}</small>
+          <button class="ref" data-refresh="${h.a.id}" title="Acak menu anggota ini">${icon('i-rotate','')}</button>
+        </span>
+      </h4>
+      <div>${badgeHTML(h.kep)}</div>
+      <div class="muted">Target ${Math.round(h.target.kkal)} kkal • protein ${Math.round(h.target.prot)} g • ${h.a.jk==='L'?'L':'P'} ${h.kelLabel}</div>
+      ${isBayi0?'<div class="mini-alert">Bayi 0–5 bulan: AKG resmi bersumber dari ASI eksklusif. Angka 100% di bawah adalah simulasi AKG tabel, bukan pengganti ASI.</div>':''}
+
+      ${h.menu.pilihan.map(mp=>{
+        const sub=mp.items.reduce((a,f)=>a+f.harga,0);
+        const kal=mp.items.reduce((a,f)=>a+Number(f.kkal||0),0);
+        return `
+        <div class="meal-sub">${mp.meal.label} • ${Math.round(mp.meal.pct*100)}% energi</div>
+        ${mp.items.length?mp.items.map(f=>itemLine(f,null)).join(''):'<div class="meal-item"><span class="muted">Tidak ada item</span><span>-</span></div>'}
+        <div class="meal-total"><span>${Math.round(kal)} kkal</span><span>${rp(sub)}</span></div>`;
+      }).join('')}
+
+      ${grupMakanan.length?`
+      <div class="meal-sub">Tambahan penutup AKG (makanan)</div>
+      ${grupMakanan.map(x=>itemLine(x.f,x.n,(x.c>1?x.c+'× ':''))).join('')}
+      <div class="meal-total"><span>Subtotal makanan</span><span>${rp(h.menu.biayaMakanan)}</span></div>`:''}
+
+      ${h.menu.pelengkap.length?`
+      <div class="pelengkap">
+        <div class="meal-sub">Pelengkap gizi (hanya untuk zat yang tak tercapai dari makanan)</div>
+        ${h.menu.pelengkap.map(p=>`<div class="meal-item"><span>${esc(p.nama)}</span><span>${rp(p.harga)}</span></div>`).join('')}
+        <div class="meal-total"><span>Subtotal pelengkap</span><span>${rp(h.menu.biayaPelengkap)}</span></div>
+      </div>`:''}
+
+      <div class="meal-total" style="border-top:2px solid rgba(43,29,14,.3);padding-top:6px">
+        <span>Total / hari</span><span>${rp(h.menu.biaya)}</span>
+      </div>
+      <div class="meal-total" style="font-weight:400">
+        <span class="muted">Dari makanan saja 100% untuk</span>
+        <span class="muted">${h.kepMakanan.ok}/${h.kepMakanan.tot} zat gizi</span>
+      </div>
+    </div>`;
+  }).join('')||'<p class="muted">Belum ada anggota.</p>';
+
+  $('mGiziBox').innerHTML=hasil.map(h=>`
+    <div class="gizi-anggota">
+      <h4><span>${esc(h.a.nama||'Anggota')} • ${esc(h.kelLabel)} • ${h.a.jk==='L'?'Laki-laki':'Perempuan'}</span>${badgeHTML(h.kep)}</h4>
+      ${Object.entries(GROUP).map(([g,keys])=>`
+        <div class="gizi-group">${g}</div>
+        ${keys.map(k=>{
+          const p=h.kep.rows.find(r=>r.k===k);
+          const pctDisp=Math.min(p.pct,100);
+          const src=h.asal[k]||'-';
+          const warna=p.ok?'#3ddc84':'#ff3b5c';
+          return `<div class="gizi-row">
+            <span>${esc(GIZI_LABEL[k]||k)}<span class="src">${src==='makanan'?'dari makanan':src==='pelengkap'?'butuh pelengkap':'—'}</span></span>
+            <div class="bar"><div class="fill" style="width:${pctDisp.toFixed(0)}%;background:${warna}"></div></div>
+            <span class="pct" style="color:${warna}">${p.ok?'100% ✔':p.pct.toFixed(0)+'%'}<span class="src">${num(p.a,2)} / ${num(p.t,2)}</span></span>
+          </div>`;
+        }).join('')}`).join('')}
+    </div>`).join('');
+}
+
+/* Kontrol variasi */
+$('btnAcakMenu').addEventListener('click', ()=>{
+  ensureMenuVarToday();
+  menuVar.global=(menuVar.global||0)+1; saveMenuVar();
+  const ic=$('icAcak'); ic.classList.add('spin'); setTimeout(()=>ic.classList.remove('spin'),800);
+  renderMenu();
+  toast('Menu keluarga diacak ulang! Variasi ke-'+(menuVar.global+1)+' — 100% AKG tetap dijaga.','safe','i-dice');
+});
+$('btnResetVariasi').addEventListener('click', ()=>{
+  menuVar={date:ymd(new Date()),global:0,per:{}}; saveMenuVar(); renderMenu();
+  toast('Kembali ke variasi awal hari ini.','safe','i-rotate');
+});
+$('menuAnggotaBox').addEventListener('click', e=>{
+  const btn=e.target.closest('button[data-refresh]'); if(!btn) return;
+  ensureMenuVarToday();
+  const id=btn.dataset.refresh;
+  menuVar.per[id]=(menuVar.per[id]||0)+1; saveMenuVar(); renderMenu();
+  const card=document.querySelector(`.menu-anggota[data-card="${id}"]`);
+  if(card){ card.classList.add('flash'); setTimeout(()=>card.classList.remove('flash'),750); }
+  toast('Menu anggota diacak ulang.','safe','i-rotate');
+});
+$('chkWajib').addEventListener('change', e=>{
+  wajib100=e.target.checked;
+  localStorage.setItem(LS_WAJIB, wajib100?'1':'0');
+  renderMenu();
+  toast(wajib100?'Mode Wajib 100% AKG aktif — semua zat gizi dijamin 100%.':'Mode hemat: menu dibatasi budget saja.','safe',wajib100?'i-check':'i-warn');
+});
+
+/* =========================================================
+   RENCANA FINANSIAL
    ========================================================= */
 function pengeluaranBulananRata(){
-  const bulan = arsip.filter(a=>a.terpakai>0);
-  if(bulan.length){
-    return bulan.reduce((a,b)=>a+b.terpakai,0)/bulan.length;
-  }
-  const d = compute();
-  return d.terpakai>0 ? d.terpakai/d.hariLewat*30 : 0;
+  const bulan=arsip.filter(a=>a.terpakai>0);
+  if(bulan.length) return bulan.reduce((a,b)=>a+b.terpakai,0)/bulan.length;
+  const d=compute();
+  return d.terpakai>0?d.terpakai/d.hariLewat*30:0;
 }
-
-function setoranBulanan(target, saldoAwal, tahun, returnTahunan){
-  const n = tahun*12;
-  const i = returnTahunan/100/12;
+function setoranBulanan(target,saldoAwal,tahun,returnTahunan){
+  const n=tahun*12, i=returnTahunan/100/12;
   if(n<=0) return target;
   if(i===0) return Math.max(0,(target-saldoAwal)/n);
-  const growth = Math.pow(1+i,n);
-  const S = (target - saldoAwal*growth) * i / (growth-1);
-  return Math.max(0,S);
+  const g=Math.pow(1+i,n);
+  return Math.max(0,(target-saldoAwal*g)*i/(g-1));
 }
-
-function bulanUntukTarget(target, saldoAwal, S, returnTahunan){
+function bulanUntukTarget(target,saldoAwal,S,returnTahunan){
   if(S<=0) return Infinity;
-  const i = returnTahunan/100/12;
-  let saldo = saldoAwal, bulan = 0;
-  while(saldo < target && bulan < 1200){
-    saldo = saldo*(1+i) + S;
-    bulan++;
-  }
-  return bulan;
+  const i=returnTahunan/100/12; let saldo=saldoAwal,b=0;
+  while(saldo<target&&b<1200){ saldo=saldo*(1+i)+S; b++; }
+  return b;
 }
-
-function setKondisi(el, setoran, tersedia){
+function setKondisi(el,setoran,tersedia){
   if(tersedia<=0){ el.textContent='Tidak ada sisa gaji'; el.style.color='#b0102c'; return; }
-  const r = setoran/tersedia*100;
+  const r=setoran/tersedia*100;
   if(r<=100){ el.textContent=`Mampu (${r.toFixed(0)}% sisa gaji)`; el.style.color='#1f7a3f'; }
   else { el.textContent=`Kurang ${rp(setoran-tersedia)}`; el.style.color='#b0102c'; }
 }
-
 function saranPensiun(p){
-  const L = [];
-  if(p.tahunPensiun<=0){
-    return {cls:'bad', judul:'Usia pensiun sudah lewat/sama dengan usia sekarang', items:['Atur usia pensiun lebih besar dari usia sekarang.']};
-  }
-  if(p.setor<=0 || p.bulanan<=0){
-    return {cls:'mid', judul:'Data pengeluaran belum ada', items:['Catat beberapa pengeluaran agar estimasi pensiun akurat.']};
-  }
-  if(p.setor > p.tersedia && p.tersedia>0){
-    L.push(`Setoran ${rp(p.setor)}/bulan melebihi sisa gaji ${rp(p.tersedia)}. Pertimbangkan menurunkan target pengeluaran pensiun atau menambah masa kerja.`);
-  } else if(p.tersedia<=0){
-    L.push('Sisa gaji belum tersedia setelah pengeluaran wajib. Prioritaskan merapikan arus kas dulu.');
-  } else {
-    L.push(`Setoran ${rp(p.setor)}/bulan sekitar ${(p.setor/p.tersedia*100).toFixed(0)}% dari sisa gaji, masih realistis.`);
-  }
-  if(p.infl<3) L.push('Asumsi inflasi di bawah 3% cenderung optimis untuk Indonesia. Biaya kesehatan & pendidikan sering naik lebih cepat dari inflasi umum, coba 4–5%.');
-  else if(p.infl>5) L.push('Asumsi inflasi di atas 5% sangat konservatif. Inflasi nasional beberapa tahun terakhir umumnya di kisaran 2–4%.');
+  const L=[];
+  if(p.tahunPensiun<=0) return {cls:'bad',judul:'Usia pensiun sudah lewat/sama dengan usia sekarang',items:['Atur usia pensiun lebih besar dari usia sekarang.']};
+  if(p.setor<=0||p.bulanan<=0) return {cls:'mid',judul:'Data pengeluaran belum ada',items:['Catat beberapa pengeluaran agar estimasi pensiun akurat.']};
+  if(p.setor>p.tersedia&&p.tersedia>0) L.push(`Setoran ${rp(p.setor)}/bulan melebihi sisa gaji ${rp(p.tersedia)}. Pertimbangkan menurunkan target pengeluaran pensiun atau menambah masa kerja.`);
+  else if(p.tersedia<=0) L.push('Sisa gaji belum tersedia setelah pengeluaran wajib. Prioritaskan merapikan arus kas dulu.');
+  else L.push(`Setoran ${rp(p.setor)}/bulan sekitar ${(p.setor/p.tersedia*100).toFixed(0)}% dari sisa gaji, masih realistis.`);
+  if(p.infl<3) L.push('Asumsi inflasi di bawah 3% cenderung optimis untuk Indonesia. Biaya kesehatan & pendidikan sering naik lebih cepat, coba 4–5%.');
+  else if(p.infl>5) L.push('Asumsi inflasi di atas 5% sangat konservatif. Inflasi nasional beberapa tahun terakhir umumnya 2–4%.');
   else L.push(`Inflasi ${p.infl}% sejalan dengan kisaran inflasi Indonesia (sekitar 2–4%/tahun).`);
-  if(p.rtn<=5.5) L.push('Imbal hasil rendah. Deposito dan tabungan biasanya di bawah 5%/tahun; untuk jangka panjang, reksa dana campuran/saham atau SBN ritel bisa memberi peluang lebih tinggi dengan risiko yang berbeda.');
-  else if(p.rtn>12) L.push('Imbal hasil di atas 12%/tahun sangat agresif dan tidak dijamin. Gunakan asumsi lebih konservatif untuk perencanaan.');
+  if(p.rtn<=5.5) L.push('Imbal hasil rendah. Deposito/tabungan biasanya di bawah 5%/tahun; untuk jangka panjang, reksa dana campuran atau SBN ritel bisa memberi peluang lebih tinggi dengan risiko berbeda.');
+  else if(p.rtn>12) L.push('Imbal hasil di atas 12%/tahun sangat agresif dan tidak dijamin. Gunakan asumsi lebih konservatif.');
   else L.push(`Imbal hasil ${p.rtn}%/tahun masuk akal untuk campuran reksa dana atau SBN jangka panjang (bukan jaminan).`);
   L.push('Manfaatkan JHT BPJS Ketenagakerjaan dan JP sebagai dasar pensiun. Tambahkan DPLK atau reksa dana pensiun untuk menutup selisih kebutuhan.');
-  if(p.tahunPensiun>=25) L.push('Jangka waktu panjang (25+ tahun) memberi peluang bunga majemuk bekerja maksimal. Mulai sedini mungkin, walau nominal kecil.');
-  const cls = (p.setor>p.tersedia && p.tersedia>0) ? 'bad' : (p.infl<3||p.rtn>12) ? 'mid' : 'ok';
-  return {cls, judul:'Saran Dana Pensiun (sesuai kondisi Indonesia)', items:L};
+  return {cls:(p.setor>p.tersedia&&p.tersedia>0)?'bad':(p.infl<3||p.rtn>12)?'mid':'ok',judul:'Saran Dana Pensiun (sesuai kondisi Indonesia)',items:L};
 }
-
 function saranMilyar(p){
-  const L = [];
-  if(p.setor<=0){
-    return {cls:'mid', judul:'Data belum lengkap', items:['Isi target dan jangka waktu untuk melihat saran.']};
-  }
-  if(p.tersedia<=0){
-    L.push('Sisa gaji belum tersedia. Target ini belum realistis tanpa menurunkan pengeluaran wajib atau menaikkan penghasilan.');
-  } else if(p.setor<=p.tersedia){
-    L.push(`Setoran ${rp(p.setor)}/bulan masih dalam kemampuan sisa gaji ${rp(p.tersedia)}. Sisihkan otomatis di awal bulan (gajian) agar tidak tergoda belanja.`);
-  } else {
-    L.push(`Kurang ${rp(p.setor-p.tersedia)}/bulan dari sisa gaji. Perpanjang jangka waktu, naikkan imbal hasil yang wajar, atau tambah sumber penghasilan.`);
-  }
-  const nilaiRiil = p.target / Math.pow(1+0.035, p.tahun);
-  L.push(`Dengan inflasi ±3,5%/tahun, nilai Rp ${new Intl.NumberFormat('id-ID').format(Math.round(p.target))} dalam ${p.tahun} tahun setara daya beli sekitar ${rp(nilaiRiil)} hari ini. Target nominal perlu dinaikkan agar daya belinya tetap.`);
-  if(p.rtn<=5.5) L.push('Imbal hasil rendah (deposito/tabungan) mungkin tidak cukup mengalahkan inflasi. Pertimbangkan reksa dana campuran atau SBN ritel (ORI/SR) sebagai alternatif, sesuai toleransi risiko.');
-  else if(p.rtn<=10) L.push('Imbal hasil wajar untuk campuran reksa dana atau SBN jangka menengah. Bandingkan biaya (fee) dan risiko tiap produk sebelum memilih.');
-  else L.push('Imbal hasil di atas 10%/tahun tergolong agresif (umumnya saham/reksa dana saham) dengan volatilitas tinggi. Siapkan mental untuk fluktuasi nilai dan jangan panik saat turun.');
-  L.push('Pajak: bunga deposito dikenai PPh final 20%, sedangkan reksa dana dikenai pajak tertentu. Cek ketentuan terbaru di DJP atau penyedia produk.');
-  L.push('Pastikan dana darurat (3–6 bulan pengeluaran) sudah ada sebelum agresif mengejar target ini, agar tidak perlu menarik investasi di saat darurat.');
-  if(p.tahun<=3) L.push('Jangka waktu pendek: hindari aset berisiko tinggi karena nilainya bisa turun di tengah jalan.');
-  const cls = p.tersedia<=0 || p.setor>p.tersedia ? 'bad' : p.rtn<=5.5 ? 'mid' : 'ok';
-  return {cls, judul:'Saran Target Rp 1 Miliar (sesuai kondisi Indonesia)', items:L};
+  const L=[];
+  if(p.setor<=0) return {cls:'mid',judul:'Data belum lengkap',items:['Isi target dan jangka waktu untuk melihat saran.']};
+  if(p.tersedia<=0) L.push('Sisa gaji belum tersedia. Target ini belum realistis tanpa menurunkan pengeluaran wajib atau menaikkan penghasilan.');
+  else if(p.setor<=p.tersedia) L.push(`Setoran ${rp(p.setor)}/bulan masih dalam kemampuan sisa gaji ${rp(p.tersedia)}. Sisihkan otomatis di awal bulan.`);
+  else L.push(`Kurang ${rp(p.setor-p.tersedia)}/bulan dari sisa gaji. Perpanjang jangka waktu, naikkan imbal hasil wajar, atau tambah sumber penghasilan.`);
+  const nilaiRiil=p.target/Math.pow(1.035,p.tahun);
+  L.push(`Dengan inflasi ±3,5%/tahun, ${rp(p.target)} dalam ${p.tahun} tahun setara daya beli sekitar ${rp(nilaiRiil)} hari ini.`);
+  if(p.rtn<=5.5) L.push('Imbal hasil rendah (deposito/tabungan) mungkin tidak cukup mengalahkan inflasi. Pertimbangkan reksa dana campuran atau SBN ritel (ORI/SR).');
+  else if(p.rtn<=10) L.push('Imbal hasil wajar untuk campuran reksa dana atau SBN jangka menengah. Bandingkan biaya (fee) dan risiko tiap produk.');
+  else L.push('Imbal hasil di atas 10%/tahun tergolong agresif dengan volatilitas tinggi.');
+  L.push('Bunga deposito dikenai PPh final 20%. Cek ketentuan terbaru di DJP atau penyedia produk.');
+  L.push('Pastikan dana darurat 3–6 bulan pengeluaran sudah ada sebelum mengejar target ini.');
+  if(p.tahun<=3) L.push('Jangka pendek: hindari aset berisiko tinggi karena nilainya bisa turun di tengah jalan.');
+  return {cls:p.tersedia<=0||p.setor>p.tersedia?'bad':p.rtn<=5.5?'mid':'ok',judul:'Saran Target Dana (sesuai kondisi Indonesia)',items:L};
 }
-
-function renderSaran(el, s){
-  el.className = 'saran '+s.cls;
-  el.innerHTML = `<div class="judul">${esc(s.judul)}</div><ul>${s.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+function renderSaran(el,s){
+  el.className='saran '+s.cls;
+  el.innerHTML=`<div class="judul">${esc(s.judul)}</div><ul>${s.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
 }
-
 function renderRencana(){
-  const d = compute();
-  const bulanan = pengeluaranBulananRata();
-  const tersedia = Math.max(0, d.sisaGaji);
+  const d=compute();
+  const bulanan=pengeluaranBulananRata();
+  const tersedia=Math.max(0,d.sisaGaji);
 
-  /* -------- 1. DANA DARURAT -------- */
-  const targetDarurat = bulanan * 6;
-  const saatIni = plan.darurat ?? 0;
-  const kurang  = Math.max(0, targetDarurat - saatIni);
-  const alokasi = Math.max(0, Math.min(100, Number($('inAlokDarurat').value)||0));
-  const setorDarurat = tersedia * alokasi/100;
-  const pctDarurat = targetDarurat>0 ? Math.min(100, saatIni/targetDarurat*100) : 0;
+  const targetDarurat=bulanan*6;
+  const saatIni=plan.darurat??0;
+  const kurang=Math.max(0,targetDarurat-saatIni);
+  const alokasi=Math.max(0,Math.min(100,Number($('inAlokDarurat').value)||0));
+  const setorDarurat=tersedia*alokasi/100;
+  const pctDarurat=targetDarurat>0?Math.min(100,saatIni/targetDarurat*100):0;
+  $('daruratTarget').textContent=rp(targetDarurat);
+  $('daruratBulanan').textContent=rp(bulanan);
+  $('daruratSaatIni').textContent=rp(saatIni);
+  $('daruratKurang').textContent=rp(kurang);
+  $('daruratSetor').textContent=rp(setorDarurat)+` (${alokasi}%)`;
+  $('daruratEta').textContent=kurang<=0?'Sudah tercapai ✔':setorDarurat<=0?'Tidak bisa (tanpa alokasi)':`${Math.ceil(kurang/setorDarurat)} bulan lagi`;
+  const ringD=$('ringDarurat'), C=2*Math.PI*28;
+  ringD.style.strokeDasharray=C;
+  ringD.style.strokeDashoffset=C*(1-pctDarurat/100);
+  ringD.setAttribute('stroke',pctDarurat>=100?'#3ddc84':pctDarurat>=50?'#ffb020':'#ff3b5c');
+  $('ringDaruratTxt').textContent=pctDarurat.toFixed(0)+'%';
+  $('tipDarurat').innerHTML=bulanan<=0
+    ? 'Belum ada data pengeluaran. Catat beberapa transaksi, lalu target akan dihitung otomatis.'
+    : `Idealnya dana darurat setara <b>6 bulan</b> pengeluaran (${rp(targetDarurat)}). Simpan di tempat terpisah yang mudah dicairkan.`;
 
-  $('daruratTarget').textContent = rp(targetDarurat);
-  $('daruratBulanan').textContent = rp(bulanan);
-  $('daruratSaatIni').textContent = rp(saatIni);
-  $('daruratKurang').textContent = rp(kurang);
-  $('daruratSetor').textContent = rp(setorDarurat)+` (${alokasi}%)`;
-  if(kurang<=0){
-    $('daruratEta').textContent = 'Sudah tercapai ✔';
-  } else if(setorDarurat<=0){
-    $('daruratEta').textContent = 'Tidak bisa (tanpa alokasi)';
-  } else {
-    const bln = Math.ceil(kurang/setorDarurat);
-    $('daruratEta').textContent = `${bln} bulan lagi`;
-  }
-  const ringD = $('ringDarurat');
-  const C = 2*Math.PI*28;
-  ringD.style.strokeDasharray = C;
-  ringD.style.strokeDashoffset = C*(1-pctDarurat/100);
-  ringD.setAttribute('stroke', pctDarurat>=100?'#3ddc84':pctDarurat>=50?'#ffb020':'#ff3b5c');
-  $('ringDaruratTxt').textContent = pctDarurat.toFixed(0)+'%';
-  $('tipDarurat').innerHTML = bulanan<=0
-    ? 'Belum ada data pengeluaran. Catat beberapa transaksi atau biarkan arsip terisi, lalu target akan dihitung otomatis.'
-    : `Idealnya dana darurat setara <b>6 bulan</b> pengeluaran (${rp(targetDarurat)}). Simpan di tempat terpisah yang mudah dicairkan, bukan untuk investasi berisiko.`;
-
-  /* -------- 2. KEHIDUPAN BERKELUARGA -------- */
-  const anggota = Math.max(1, Number($('inAnggota').value)||1);
-  const anak    = Math.max(0, Number($('inAnak').value)||0);
-  const gaji = state.gaji;
-  const komponen = [
-    {nama:'Kebutuhan pokok keluarga', persen: 40 + Math.min(anggota-1,4)*2},
-    {nama:'Pendidikan anak', persen: anak>0 ? Math.min(5+anak*3,20) : 0},
-    {nama:'Kesehatan & asuransi', persen: 5 + (anggota>2?2:0)},
-    {nama:'Rekreasi & waktu bersama', persen: 5},
-    {nama:'Tabungan & cadangan keluarga', persen: 10},
+  const anggotaN=Math.max(1,anggota.length);
+  const anakN=anggota.filter(a=>['0-5','6-11','1-3','4-6','7-9','10-12','13-15','16-18'].includes(kelompokDari(a.tglLahir,a.kelompok))).length;
+  const komponen=[
+    {nama:'Kebutuhan pokok keluarga',persen:40+Math.min(anggotaN-1,4)*2},
+    {nama:'Pendidikan anak',persen:anakN>0?Math.min(5+anakN*3,20):0},
+    {nama:'Kesehatan & asuransi',persen:5+(anggotaN>2?2:0)},
+    {nama:'Rekreasi & waktu bersama',persen:5},
+    {nama:'Tabungan & cadangan keluarga',persen:10}
   ];
-  const totalPersen = komponen.reduce((a,b)=>a+b.persen,0);
-  const totalKeluarga = gaji * totalPersen/100;
-  $('famTotal').textContent = rp(totalKeluarga)+' / bulan';
-  $('famList').innerHTML = komponen.map(k=>`<li>${esc(k.nama)}: ${rp(gaji*k.persen/100)} (${k.persen}%)</li>`).join('');
-  $('famAnggota').textContent = anggota+' orang'+(anak?` (${anak} anak)`:'');
-  $('famPerOrang').textContent = rp(totalKeluarga/anggota);
-  setKondisi($('famKondisi'), totalKeluarga, gaji);
-  $('famKondisi').textContent = totalKeluarga>gaji
-    ? `Melebihi gaji ${rp(totalKeluarga-gaji)}`
-    : `Sisa ${rp(gaji-totalKeluarga)} dari gaji`;
-  $('famKondisi').style.color = totalKeluarga>gaji ? '#b0102c' : '#1f7a3f';
-  $('tipFam').innerHTML = `Proporsi ini adalah <b>patokan umum</b>. Jika pengeluaran rumah tangga kamu nyata berbeda, sesuaikan jumlah anggota & anak agar hasil lebih akurat.`;
+  const totalKeluarga=komponen.reduce((a,b)=>a+state.gaji*b.persen/100,0);
+  $('famTotal').textContent=rp(totalKeluarga)+' / bulan';
+  $('famList').innerHTML=komponen.map(k=>`<li>${esc(k.nama)}: ${rp(state.gaji*k.persen/100)} (${k.persen}%)</li>`).join('');
+  $('famAnggota').textContent=anggotaN+' orang'+(anakN?` (${anakN} anak)`:'');
+  $('famPerOrang').textContent=rp(totalKeluarga/anggotaN);
+  $('famKondisi').textContent=totalKeluarga>state.gaji?`Melebihi gaji ${rp(totalKeluarga-state.gaji)}`:`Sisa ${rp(state.gaji-totalKeluarga)} dari gaji`;
+  $('famKondisi').style.color=totalKeluarga>state.gaji?'#b0102c':'#1f7a3f';
+  $('tipFam').innerHTML='Jumlah anggota diambil otomatis dari daftar <b>Anggota Keluarga</b>. Proporsi ini adalah patokan umum.';
 
-  /* -------- 3. DANA PENSIUN -------- */
-  const usia       = Math.max(15, Number($('inUsia').value)||25);
-  const usiaPensiun= Math.max(usia+1, Number($('inUsiaPensiun').value)||55);
-  const rtn        = Number($('inReturn').value)||0;
-  const infl       = Number($('inInflasi').value)||0;
-  const tahunPensiun = usiaPensiun - usia;
-  const pengeluaranPensiun = bulanan * Math.pow(1+infl/100, tahunPensiun);
-  const dibutuhkanPensiun  = pengeluaranPensiun * 12 / 0.04;
-  const setorPensiun = setoranBulanan(dibutuhkanPensiun, 0, tahunPensiun, rtn);
-
-  $('pensiunTarget').textContent = rp(dibutuhkanPensiun);
-  $('pensiunUsiaNow').textContent = usia+' tahun';
-  $('pensiunTahun').textContent = tahunPensiun+' tahun';
-  $('pensiunKeluar').textContent = rp(pengeluaranPensiun);
-  $('pensiunSetor').textContent = rp(setorPensiun)+' / bulan';
-  setKondisi($('pensiunKondisi'), setorPensiun, tersedia);
-  $('tipPensiun').innerHTML = bulanan<=0
+  const usia=Math.max(15,Number($('inUsia').value)||25);
+  const usiaPensiun=Math.max(usia+1,Number($('inUsiaPensiun').value)||55);
+  const rtn=Number($('inReturn').value)||0;
+  const infl=Number($('inInflasi').value)||0;
+  const tahunPensiun=usiaPensiun-usia;
+  const pengeluaranPensiun=bulanan*Math.pow(1+infl/100,tahunPensiun);
+  const dibutuhkanPensiun=pengeluaranPensiun*12/0.04;
+  const setorPensiun=setoranBulanan(dibutuhkanPensiun,0,tahunPensiun,rtn);
+  $('pensiunTarget').textContent=rp(dibutuhkanPensiun);
+  $('pensiunTahun').textContent=tahunPensiun+' tahun';
+  $('pensiunKeluar').textContent=rp(pengeluaranPensiun);
+  $('pensiunSetor').textContent=rp(setorPensiun)+' / bulan';
+  setKondisi($('pensiunKondisi'),setorPensiun,tersedia);
+  $('tipPensiun').innerHTML=bulanan<=0
     ? 'Belum ada data pengeluaran untuk menghitung dana pensiun.'
-    : `Target dihitung dengan aturan <b>4% per tahun</b> dari dana pokok, sehingga pengeluaran ${rp(pengeluaranPensiun)}/bulan (sudah disesuaikan inflasi ${infl}%/tahun) tetap terpenuhi selama pensiun.`;
-  renderSaran($('saranPensiun'), saranPensiun({
-    tahunPensiun, setor:setorPensiun, bulanan, tersedia, infl, rtn
-  }));
+    : `Target dihitung dengan aturan <b>4% per tahun</b>, pengeluaran ${rp(pengeluaranPensiun)}/bulan sudah disesuaikan inflasi ${infl}%/tahun.`;
+  renderSaran($('saranPensiun'),saranPensiun({tahunPensiun,setor:setorPensiun,bulanan,tersedia,infl,rtn}));
 
-  /* -------- 4. TARGET 1 MILIAR 5 TAHUN -------- */
-  const target   = parseMoney($('inTarget').value) ?? 1000000000;
-  const tahunT   = Math.max(1, Number($('inTahun').value)||5);
-  const rtnM     = Number($('inReturnM').value)||0;
-  const saldoAwal= parseMoney($('inSaldoAwal').value) ?? 0;
-  const setorM   = setoranBulanan(target, saldoAwal, tahunT, rtnM);
-  const bulanDicapai = bulanUntukTarget(target, saldoAwal, tersedia, rtnM);
-  const tahunDicapai = bulanDicapai/12;
-
-  $('milyarSetor').textContent = rp(setorM)+' / bulan';
-  $('milyarTarget').textContent = rp(target);
-  $('milyarWaktu').textContent = tahunT+' tahun ('+(tahunT*12)+' bulan)';
-  $('milyarSetor2').textContent = rp(setorM);
-  $('milyarTersedia').textContent = rp(tersedia)+' / bulan';
-  setKondisi($('milyarKondisi'), setorM, tersedia);
-  $('milyarKondisi').textContent = setorM<=tersedia
-    ? 'Mampu dicapai ✔'
-    : `Kurang ${rp(setorM-tersedia)} / bulan`;
-  $('milyarKondisi').style.color = setorM<=tersedia ? '#1f7a3f' : '#b0102c';
-  $('milyarProyeksi').textContent = isFinite(bulanDicapai)
-    ? (bulanDicapai>=1200 ? 'Tidak tercapai' : `${tahunDicapai.toFixed(1)} tahun (${bulanDicapai} bulan)`)
-    : 'Tidak tercapai (sisa gaji 0)';
-  $('tipMilyar').innerHTML = setorM<=tersedia
-    ? `Untuk mengumpulkan <b>${rpShort(target)}</b> dalam ${tahunT} tahun, cukup menyisihkan <b>${rp(setorM)}</b> per bulan dengan imbal hasil ${rtnM}%/tahun. Hasil pada sisa gaji saat ini: <b>${tahunDicapai.toFixed(1)} tahun</b>.`
-    : `Target ${rpShort(target)} dalam ${tahunT} tahun butuh <b>${rp(setorM)}</b>/bulan, melebihi sisa gaji. Coba perpanjang jangka waktu, naikkan imbal hasil, atau kurangi pengeluaran wajib.`;
-  renderSaran($('saranMilyar'), saranMilyar({
-    target, tahun:tahunT, setor:setorM, tersedia, rtn:rtnM
-  }));
+  const target=parseMoney($('inTarget').value)??1000000000;
+  const tahunT=Math.max(1,Number($('inTahun').value)||5);
+  const rtnM=Number($('inReturnM').value)||0;
+  const saldoAwal=parseMoney($('inSaldoAwal').value)??0;
+  const setorM=setoranBulanan(target,saldoAwal,tahunT,rtnM);
+  const bulanDicapai=bulanUntukTarget(target,saldoAwal,tersedia,rtnM);
+  $('milyarSetor').textContent=rp(setorM)+' / bulan';
+  $('milyarTarget').textContent=rp(target);
+  $('milyarWaktu').textContent=tahunT+' tahun ('+(tahunT*12)+' bulan)';
+  $('milyarTersedia').textContent=rp(tersedia)+' / bulan';
+  $('milyarKondisi').textContent=setorM<=tersedia?'Mampu dicapai ✔':`Kurang ${rp(setorM-tersedia)} / bulan`;
+  $('milyarKondisi').style.color=setorM<=tersedia?'#1f7a3f':'#b0102c';
+  $('milyarProyeksi').textContent=isFinite(bulanDicapai)
+    ?(bulanDicapai>=1200?'Tidak tercapai':`${(bulanDicapai/12).toFixed(1)} tahun (${bulanDicapai} bulan)`)
+    :'Tidak tercapai (sisa gaji 0)';
+  $('tipMilyar').innerHTML=setorM<=tersedia
+    ? `Untuk mengumpulkan <b>${rpShort(target)}</b> dalam ${tahunT} tahun, cukup menyisihkan <b>${rp(setorM)}</b> per bulan dengan imbal hasil ${rtnM}%/tahun.`
+    : `Target ${rpShort(target)} dalam ${tahunT} tahun butuh <b>${rp(setorM)}</b>/bulan, melebihi sisa gaji. Perpanjang jangka waktu atau kurangi pengeluaran wajib.`;
+  renderSaran($('saranMilyar'),saranMilyar({target,tahun:tahunT,setor:setorM,tersedia,rtn:rtnM}));
 }
-
-function bindPlanInput(id, key){
-  bindMoney($(id), v=>{ plan[key]=v??0; savePlan(); renderRencana(); });
-}
-function bindPlanNumber(id){
-  $(id).addEventListener('input', ()=>renderRencana());
+function bindPlanInput(id,key){
+  bindMoney($(id),v=>{ plan[key]=v??0; savePlan(); renderRencana(); });
 }
 bindPlanInput('inDarurat','darurat');
 bindPlanInput('inSaldoAwal','saldoAwalMilyar');
 bindPlanInput('inTarget','targetMilyar');
-['inAlokDarurat','inAnggota','inAnak','inUsia','inUsiaPensiun','inReturn','inInflasi','inTahun','inReturnM']
-  .forEach(bindPlanNumber);
-
+['inAlokDarurat','inUsia','inUsiaPensiun','inReturn','inInflasi','inTahun','inReturnM']
+  .forEach(id=>$(id).addEventListener('input',renderRencana));
 function restorePlanInputs(){
-  if(plan.darurat!=null) $('inDarurat').value = fmtInput(plan.darurat);
-  if(plan.saldoAwalMilyar!=null) $('inSaldoAwal').value = fmtInput(plan.saldoAwalMilyar);
-  if(plan.targetMilyar!=null) $('inTarget').value = fmtInput(plan.targetMilyar);
+  if(plan.darurat!=null) $('inDarurat').value=fmtInput(plan.darurat);
+  if(plan.saldoAwalMilyar!=null) $('inSaldoAwal').value=fmtInput(plan.saldoAwalMilyar);
+  if(plan.targetMilyar!=null) $('inTarget').value=fmtInput(plan.targetMilyar);
 }
 
 /* =========================================================
-   INPUT RUPIAH
+   INPUT & UTIL UI
    ========================================================= */
-bindMoney($('nominal'), v=>{
-  $('nominalHint').textContent = v ? `Terbaca: ${rp(v)}` : '';
-});
-bindMoney($('saldoAktual'), v=>{
-  state.saldoAktual = v;
-  save(); syncArsipAktif(); render();
-});
+bindMoney($('nominal'), v=>{ $('nominalHint').textContent=v?`Terbaca: ${rp(v)}`:''; });
+bindMoney($('saldoAktual'), v=>{ state.saldoAktual=v; save(); syncArsipAktif(); render(); });
 ['setGaji','setRumah','setListrik'].forEach(id=>{
   bindMoney($(id), ()=>{
-    state.gaji         = Math.max(0, parseMoney($('setGaji').value)   ?? 0);
-    state.wajibRumah   = Math.max(0, parseMoney($('setRumah').value)  ?? 0);
-    state.wajibListrik = Math.max(0, parseMoney($('setListrik').value)?? 0);
+    state.gaji=Math.max(0,parseMoney($('setGaji').value)??0);
+    state.wajibRumah=Math.max(0,parseMoney($('setRumah').value)??0);
+    state.wajibListrik=Math.max(0,parseMoney($('setListrik').value)??0);
     save(); syncArsipAktif(); render();
   });
 });
-
-/* =========================================================
-   KATEGORI PICKER, TOAST, EFEK
-   ========================================================= */
 function buildKatPicker(){
-  $('katPicker').innerHTML = KATEGORI.map((k,i)=>`
+  $('katPicker').innerHTML=KATEGORI.map((k,i)=>`
     <div class="kat-opt">
       <input type="radio" name="katRadio" id="kr${i}" value="${k.id}" ${i===0?'checked':''}>
       <label for="kr${i}"><svg viewBox="0 0 24 24"><use href="#${k.icon}"/></svg>${esc(k.id)}</label>
     </div>`).join('');
 }
-function getKategori(){
-  const r = document.querySelector('input[name=katRadio]:checked');
-  return r ? r.value : KATEGORI[0].id;
-}
-
-function toast(msg, level='safe', icoId='i-check'){
+function getKategori(){ const r=document.querySelector('input[name=katRadio]:checked'); return r?r.value:KATEGORI[0].id; }
+function toast(msg,level='safe',icoId='i-check'){
   const el=document.createElement('div');
   el.className='toast '+level;
   el.innerHTML=`${icon(icoId)}<span>${msg}</span>`;
@@ -1490,22 +2026,20 @@ function toast(msg, level='safe', icoId='i-check'){
   setTimeout(()=>el.remove(),3100);
 }
 function burst(){
-  const r = $('alertBox').getBoundingClientRect();
-  const cx = r.left + r.width/2, cy = r.top + r.height/2;
+  const r=$('alertBox').getBoundingClientRect();
+  const cx=r.left+r.width/2, cy=r.top+r.height/2;
   for(let i=0;i<14;i++){
-    const p=document.createElement('div');
-    p.className='haki';
-    const a = Math.random()*Math.PI*2, dist = 60+Math.random()*80;
+    const p=document.createElement('div'); p.className='haki';
+    const a=Math.random()*Math.PI*2, dist=60+Math.random()*80;
     p.style.left=cx+'px'; p.style.top=cy+'px';
-    p.style.background = i%2 ? '#f5c542' : '#d7263d';
-    p.style.setProperty('--dx', Math.cos(a)*dist+'px');
-    p.style.setProperty('--dy', Math.sin(a)*dist+'px');
+    p.style.background=i%2?'#f5c542':'#d7263d';
+    p.style.setProperty('--dx',Math.cos(a)*dist+'px');
+    p.style.setProperty('--dy',Math.sin(a)*dist+'px');
     document.body.appendChild(p);
     setTimeout(()=>p.remove(),950);
   }
 }
 (function bubbles(){
-  const host=$('bubbles');
   for(let i=0;i<14;i++){
     const b=document.createElement('div');
     b.className='bubble';
@@ -1513,186 +2047,129 @@ function burst(){
     b.style.animationDuration=(8+Math.random()*10)+'s';
     b.style.animationDelay=(-Math.random()*12)+'s';
     b.style.width=b.style.height=(4+Math.random()*10)+'px';
-    host.appendChild(b);
+    $('bubbles').appendChild(b);
   }
 })();
 
 /* =========================================================
-   SINKRONISASI KODE AKSES (via /api/sync → GitHub)
+   SINKRONISASI KODE
    ========================================================= */
-let syncCode      = localStorage.getItem(LS_CODE) || null;
-let baseUpdatedAt = localStorage.getItem(LS_BASE) || null;
-let pushTimer     = null;
-let pulling       = false;
-let pushing       = false;
-
+let syncCode=localStorage.getItem(LS_CODE)||null;
+let baseUpdatedAt=localStorage.getItem(LS_BASE)||null;
+let pushTimer=null, pulling=false, pushing=false;
 function genCode(){
-  const c = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-  const part = n => Array.from({length:n},()=>c[Math.floor(Math.random()*c.length)]).join('');
+  const c='ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  const part=n=>Array.from({length:n},()=>c[Math.floor(Math.random()*c.length)]).join('');
   return `${part(4)}-${part(4)}-${part(4)}`;
 }
-function setSyncStatus(txt, cls=''){
-  const el = $('syncStatus');
-  el.textContent = txt;
-  el.className = cls;
-}
-function snapshotForSync(){
-  return { state, plan, arsip };
-}
+function setSyncStatus(txt,cls=''){ const el=$('syncStatus'); el.textContent=txt; el.className=cls; }
 function applyRemote(data){
   if(!data) return;
-  if(data.state) state = data.state;
-  if(data.plan)  plan  = data.plan;
-  if(Array.isArray(data.arsip)) arsip = data.arsip;
-  localStorage.setItem(LS_KEY, JSON.stringify(state));
-  localStorage.setItem(LS_PLAN, JSON.stringify(plan));
-  localStorage.setItem(LS_ARSIP, JSON.stringify(arsip));
-  restorePlanInputs();
-  render();
+  if(data.state) state=data.state;
+  if(data.plan) plan=data.plan;
+  if(Array.isArray(data.arsip)) arsip=data.arsip;
+  if(Array.isArray(data.anggota)&&data.anggota.length) anggota=data.anggota;
+  if(data.menuVar&&data.menuVar.date) menuVar={date:data.menuVar.date,global:data.menuVar.global||0,per:data.menuVar.per||{}};
+  if(typeof data.wajib100==='boolean'){ wajib100=data.wajib100; localStorage.setItem(LS_WAJIB,wajib100?'1':'0'); $('chkWajib').checked=wajib100; }
+  localStorage.setItem(LS_KEY,JSON.stringify(state));
+  localStorage.setItem(LS_PLAN,JSON.stringify(plan));
+  localStorage.setItem(LS_ARSIP,JSON.stringify(arsip));
+  localStorage.setItem(LS_ANGGOTA,JSON.stringify(anggota));
+  localStorage.setItem(LS_MENUVAR,JSON.stringify(menuVar));
+  restorePlanInputs(); renderAnggotaList(); render();
 }
-
 async function pullRemote(){
-  if(!syncCode || pulling || pushing) return;
-  pulling = true;
+  if(!syncCode||pulling||pushing) return;
+  pulling=true;
   try{
-    const r = await fetch(`/api/sync?code=${encodeURIComponent(syncCode)}`);
-    if(r.status === 404){
-      pulling = false;
-      await pushRemote(true);
-      return;
-    }
+    const r=await fetch(`/api/sync?code=${encodeURIComponent(syncCode)}`);
+    if(r.status===404){ pulling=false; await pushRemote(true); return; }
     if(!r.ok) throw new Error('pull');
-    const {data, updatedAt} = await r.json();
-    if(updatedAt && updatedAt !== baseUpdatedAt){
-      applyRemote(data);
-      baseUpdatedAt = updatedAt;
-      localStorage.setItem(LS_BASE, updatedAt);
+    const {data,updatedAt}=await r.json();
+    if(updatedAt&&updatedAt!==baseUpdatedAt){
+      applyRemote(data); baseUpdatedAt=updatedAt; localStorage.setItem(LS_BASE,updatedAt);
       toast('Data diperbarui dari perangkat lain.','safe','i-check');
     }
-    setSyncStatus(`✔ Tersinkron • kode ${syncCode}`, 'ok');
-  }catch(e){
-    setSyncStatus('Offline — data tersimpan lokal', 'warn');
-  }finally{ pulling = false; }
+    setSyncStatus(`✔ Tersinkron • kode ${syncCode}`,'ok');
+  }catch(e){ setSyncStatus('Offline — data tersimpan lokal','warn'); }
+  finally{ pulling=false; }
 }
-
 async function pushRemote(silent=false){
-  if(!syncCode || pushing) return;
-  pushing = true;
+  if(!syncCode||pushing) return;
+  pushing=true;
   try{
-    const r = await fetch(`/api/sync?code=${encodeURIComponent(syncCode)}`,{
-      method:'PUT',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({data: snapshotForSync(), baseUpdatedAt})
+    const r=await fetch(`/api/sync?code=${encodeURIComponent(syncCode)}`,{
+      method:'PUT', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({data:{state,plan,arsip,anggota,menuVar,wajib100},baseUpdatedAt})
     });
-    if(r.status === 409){
-      const j = await r.json();
+    if(r.status===409){
+      const j=await r.json();
       applyRemote(j.data);
-      baseUpdatedAt = j.data?._updatedAt || baseUpdatedAt;
-      if(baseUpdatedAt) localStorage.setItem(LS_BASE, baseUpdatedAt);
+      baseUpdatedAt=j.data?._updatedAt||baseUpdatedAt;
+      if(baseUpdatedAt) localStorage.setItem(LS_BASE,baseUpdatedAt);
       toast('Konflik terdeteksi, data terbaru dimuat.','warn','i-warn');
       return;
     }
     if(!r.ok) throw new Error('push');
-    const j = await r.json();
-    baseUpdatedAt = j.updatedAt;
-    localStorage.setItem(LS_BASE, baseUpdatedAt);
-    setSyncStatus(`✔ Tersinkron • kode ${syncCode}`, 'ok');
+    const j=await r.json();
+    baseUpdatedAt=j.updatedAt; localStorage.setItem(LS_BASE,baseUpdatedAt);
+    setSyncStatus(`✔ Tersinkron • kode ${syncCode}`,'ok');
     if(!silent) toast('Tersinkron ke server.','safe','i-check');
-  }catch(e){
-    setSyncStatus('Gagal sinkron — akan dicoba lagi', 'warn');
-  }finally{ pushing = false; }
+  }catch(e){ setSyncStatus('Gagal sinkron — akan dicoba lagi','warn'); }
+  finally{ pushing=false; }
 }
-
-function queueSync(){
-  if(!syncCode) return;
-  clearTimeout(pushTimer);
-  pushTimer = setTimeout(()=>pushRemote(true), 800);
-}
-
+function queueSync(){ if(!syncCode) return; clearTimeout(pushTimer); pushTimer=setTimeout(()=>pushRemote(true),800); }
 function activateCode(code){
-  syncCode = code;
-  localStorage.setItem(LS_CODE, code);
-  baseUpdatedAt = null;
-  localStorage.removeItem(LS_BASE);
-  setSyncStatus(`Menghubungkan • kode ${code}`);
-  pullRemote();
+  syncCode=code; localStorage.setItem(LS_CODE,code);
+  baseUpdatedAt=null; localStorage.removeItem(LS_BASE);
+  setSyncStatus(`Menghubungkan • kode ${code}`); pullRemote();
 }
-
-$('btnNewCode').addEventListener('click', ()=>{
-  const code = genCode();
-  activateCode(code);
-  prompt('Simpan kode akses ini (siapa pun dengan kode ini bisa mengedit data):', code);
-});
-$('btnJoin').addEventListener('click', ()=>{
-  const code = $('inCode').value.toUpperCase().trim();
+$('btnNewCode').addEventListener('click',()=>{ const code=genCode(); activateCode(code); prompt('Simpan kode akses ini (siapa pun dengan kode ini bisa mengedit data):',code); });
+$('btnJoin').addEventListener('click',()=>{
+  const code=$('inCode').value.toUpperCase().trim();
   if(!code) return toast('Masukkan kode akses.','warn','i-warn');
-  activateCode(code);
-  toast('Mencoba bergabung dengan kode...','safe','i-anchor');
+  activateCode(code); toast('Mencoba bergabung dengan kode...','safe','i-anchor');
 });
-$('btnLeave').addEventListener('click', ()=>{
+$('btnLeave').addEventListener('click',()=>{
   if(!confirm('Keluar dari mode kode? Data tetap ada di perangkat ini, tapi tidak lagi tersinkron.')) return;
-  syncCode = null;
-  localStorage.removeItem(LS_CODE);
-  localStorage.removeItem(LS_BASE);
-  baseUpdatedAt = null;
-  setSyncStatus('Status: Lokal (tanpa kode)');
+  syncCode=null; localStorage.removeItem(LS_CODE); localStorage.removeItem(LS_BASE);
+  baseUpdatedAt=null; setSyncStatus('Status: Lokal (tanpa kode)');
 });
-
-setInterval(()=>{ if(syncCode && document.visibilityState==='visible') pullRemote(); }, 20000);
-document.addEventListener('visibilitychange', ()=>{
-  if(document.visibilityState==='visible' && syncCode) pullRemote();
-});
+setInterval(()=>{ if(syncCode&&document.visibilityState==='visible') pullRemote(); },20000);
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'&&syncCode) pullRemote(); });
 
 /* =========================================================
-   EVENT SIKLUS AKTIF
+   FORM & AKSI
    ========================================================= */
 $('form').addEventListener('submit', e=>{
   e.preventDefault();
-  const nama    = $('nama').value.trim();
-  const nominal = parseMoney($('nominal').value);
-  const tgl     = $('tanggalTx').value;
-  if(!nama || !(nominal>0) || !tgl) {
-    toast('Lengkapi nama, nominal (lebih dari 0), dan tanggal.','warn','i-warn');
-    return;
-  }
-
-  const before = status(compute());
+  const nama=$('nama').value.trim();
+  const nominal=parseMoney($('nominal').value);
+  const tgl=$('tanggalTx').value;
+  if(!nama||!(nominal>0)||!tgl){ toast('Lengkapi nama, nominal (lebih dari 0), dan tanggal.','warn','i-warn'); return; }
+  const before=status(compute());
   state.pengeluaran.unshift({
-    id: Date.now().toString(36)+Math.random().toString(36).slice(2,6),
-    nama, nominal, kategori: getKategori(),
-    tanggal: parseYmd(tgl).toISOString()
+    id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+    nama,nominal,kategori:getKategori(),tanggal:parseYmd(tgl).toISOString()
   });
   save(); syncArsipAktif(); render();
-
-  const after = status(compute());
+  const after=status(compute());
   if(after.level==='danger') toast(`${after.title} — ${after.msg.replace(/<[^>]+>/g,'')}`,'danger','i-skull');
   else if(after.level==='warn') toast('Badai mendekat! Sisa dana makin tipis.','warn','i-warn');
   else if(before.level!=='safe') toast('Laut kembali tenang. Good job!','safe','i-shield');
   else toast('Pelayaran tercatat.','safe','i-check');
-
-  e.target.reset();
-  $('nominalHint').textContent = '';
-  $('tanggalTx').value = ymd(today);
-  document.getElementById('kr0').checked = true;
+  e.target.reset(); $('nominalHint').textContent='';
+  $('tanggalTx').value=ymd(today);
+  document.getElementById('kr0').checked=true;
   $('nama').focus();
 });
-
-$('list').addEventListener('click', e=>{
-  const btn=e.target.closest('.del'); if(!btn) return;
-  state.pengeluaran = state.pengeluaran.filter(p=>p.id!==btn.dataset.id);
-  save(); syncArsipAktif(); render(); toast('Catatan dihapus dari log.','safe','i-trash');
-});
-$('fCari').addEventListener('input', renderList);
-$('fKat').addEventListener('change', renderList);
-
-$('btnReset').addEventListener('click', ()=>{
+$('btnReset').addEventListener('click',()=>{
   if(!confirm('Reset pengeluaran & saldo aktual siklus ini?\nSiklus ini tetap tersimpan di Arsip Lifetime.')) return;
   syncArsipAktif();
   state.pengeluaran=[]; state.saldoAktual=null;
   save(); render(); toast('Siklus direset. Tersimpan di arsip.','safe','i-reset');
 });
-
-$('btnCSV').addEventListener('click', ()=>{
+$('btnCSV').addEventListener('click',()=>{
   const d=compute();
   const rows=[
     ['Siklus',`${ymd(curStart)} s/d ${ymd(curEnd)}`],[],
@@ -1704,9 +2181,9 @@ $('btnCSV').addEventListener('click', ()=>{
   state.pengeluaran.slice().reverse().forEach(p=>rows.push([ymd(new Date(p.tanggal)),p.kategori,p.nama,p.nominal]));
   download(`budget_${curKey}.csv`,'\uFEFF'+rows.map(r=>r.map(csvCell).join(',')).join('\n'),'text/csv;charset=utf-8');
 });
-$('btnJSON').addEventListener('click', ()=>{
+$('btnJSON').addEventListener('click',()=>{
   download(`budget_${curKey}.json`,
-    JSON.stringify({...state, siklusMulai:ymd(curStart), siklusSelesai:ymd(curEnd), ringkasan:compute()},null,2),
+    JSON.stringify({...state,siklusMulai:ymd(curStart),siklusSelesai:ymd(curEnd),ringkasan:compute()},null,2),
     'application/json');
 });
 
@@ -1714,18 +2191,20 @@ $('btnJSON').addEventListener('click', ()=>{
    INIT
    ========================================================= */
 (function init(){
-  $('setGaji').value   = fmtInput(state.gaji);
-  $('setRumah').value  = fmtInput(state.wajibRumah);
-  $('setListrik').value= fmtInput(state.wajibListrik);
-  $('tanggalTx').value = ymd(today);
+  $('setGaji').value=fmtInput(state.gaji);
+  $('setRumah').value=fmtInput(state.wajibRumah);
+  $('setListrik').value=fmtInput(state.wajibListrik);
+  $('tanggalTx').value=ymd(today);
+  $('chkWajib').checked=wajib100;
   restorePlanInputs();
   buildKatPicker();
-  save();
-  syncArsipAktif();
+  ensureMenuVarToday();
+  renderAnggotaList();
+  save(); saveAnggota(); syncArsipAktif();
   render();
   if(syncCode){ setSyncStatus(`Menghubungkan • kode ${syncCode}`); pullRemote(); }
-  if(autoReset && archiveAutoSaved)
-    setTimeout(()=>toast('Siklus baru dimulai (tgl 28). Siklus sebelumnya diarsipkan.','safe','i-anchor'),400);
+  if(autoReset&&archiveAutoSaved) setTimeout(()=>toast('Siklus baru dimulai (tgl 28). Siklus sebelumnya diarsipkan.','safe','i-anchor'),400);
+  if(wajib100) setTimeout(()=>toast('Mode Wajib 100% AKG aktif: setiap anggota dijamin 36/36 zat gizi.','safe','i-shield'),900);
 })();
 </script>
 
